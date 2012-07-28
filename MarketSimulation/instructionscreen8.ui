@@ -1,7 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <author/>
- <comment/>
- <exportmacro/>
  <class>InstructionScreen8</class>
  <widget class="QWidget" name="InstructionScreen8">
   <property name="geometry">
@@ -15,7 +13,34 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>40</y>
+     <width>371</width>
+     <height>231</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Well done!
+
+The experiment will run for 20 minutes. During this time you may change
+between the decryption task and the simulation task as many times as you
+wish.
+
+At the end of the experiment you will be paid your total wealth from
+the stock market simulation as well as 5 cents for each decryption you
+complete.
+
+If you have any questions about the instructions please raise your hand
+now.
+
+To finish the instructions and begin the experiment press the Make Initial
+Allocation button.</string>
+   </property>
+  </widget>
  </widget>
- <pixmapfunction/>
+ <resources/>
  <connections/>
 </ui>

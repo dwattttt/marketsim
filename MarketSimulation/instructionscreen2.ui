@@ -1,7 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <author/>
- <comment/>
- <exportmacro/>
  <class>InstructionScreen2</class>
  <widget class="QWidget" name="InstructionScreen2">
   <property name="geometry">
@@ -15,7 +13,27 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>15</x>
+     <y>170</y>
+     <width>371</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Make your initial allocation by setting the slider to the percentage of the
+$10 endowment that you wish to allocate to each asset.
+
+Moving the slider to the left will allocate more to Asset 1 and less to Asset
+2. Moving it to the right will allocate more to Asset 2 and less to Asset 1.
+
+Once you have entered an allocation press the begin button.
+Once all participants are ready to begin the experiment will start.</string>
+   </property>
+  </widget>
  </widget>
- <pixmapfunction/>
+ <resources/>
  <connections/>
 </ui>
