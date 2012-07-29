@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QList>
+#include <QCloseEvent>
 #include "market.h"
 #include "simulationwindow.h"
 #include "decryptionwindow.h"
@@ -61,6 +62,10 @@ private:
 
     bool simStarted;
     bool simRunning;
+    bool finishedExperiment;
+
+    // To make sure users can't exit until they've finished the experiment
+    void closeEvent(QCloseEvent *);
 
 private slots:
     void preNavigation();

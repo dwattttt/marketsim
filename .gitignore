@@ -1,7 +1,9 @@
 ###################################
 ## Market Simulation
 ###################################
-MarketSimulation-build-desktop-Qt_4_8_1_for_Desktop_-_MinGW__Qt_SDK__Debug
+MarketSimulation-build-desktop-*
+# Qt system specific project files
+*.pro.user
 
 #################
 ## Eclipse

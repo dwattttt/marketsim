@@ -73,6 +73,7 @@ MainWindow::MainWindow(QWidget *parent) :
     preNavigation();
 
     simStarted = false;
+    finishedExperiment = false;
 
     connect(ui->nextButton, SIGNAL(clicked()), this, SLOT(nextScreen()));
     connect(ui->prevButton, SIGNAL(clicked()), this, SLOT(prevScreen()));
@@ -155,6 +156,11 @@ void MainWindow::nextScreen()
         preNavigation();
         ui->stackedWidget->setCurrentWidget(*pos);
     }
+    // If we're now at the end, allow them to exit
+
+    if (pos + 1 == widgets->end()) {
+        finishedExperiment = true;
+    }
 }
 
 void MainWindow::prevScreen()
@@ -172,9 +178,22 @@ void MainWindow::updateTime(QString timeString)
 {
     ui->timeLabel->setText(timeString);
     if (timeString == "" && simRunning) {
+        // We've finished the experiment; show them the last screens.
         simRunning = false;
         pos = widgets->end() - 2;
         preNavigation();
         ui->stackedWidget->setCurrentWidget(*pos);
+    }
+}
+
+void MainWindow::closeEvent(QCloseEvent* event)
+{
+    if( ! finishedExperiment )
+    {
+        event->ignore();
+    }
+    else
+    {
+        event->accept();
     }
 }
