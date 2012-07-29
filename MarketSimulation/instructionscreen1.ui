@@ -1,7 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <author/>
- <comment/>
- <exportmacro/>
  <class>InstructionScreen1</class>
  <widget class="QWidget" name="InstructionScreen1">
   <property name="geometry">
@@ -15,7 +13,30 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>381</width>
+     <height>271</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Thank you for agreeing to take part in this study.
+
+If you do not understand any of the following instructions please raise
+your hand and the experimenter will clarify them for you.
+
+During this experiment you will invest $10 in a stock market simulation.
+
+You may choose any non-negative allocation between 2 assets.
+
+Your initial allocation will be made on a screen similar to the one shown on
+the next page. Please click the Next button.</string>
+   </property>
+  </widget>
  </widget>
- <pixmapfunction/>
+ <resources/>
  <connections/>
 </ui>

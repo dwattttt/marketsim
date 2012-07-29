@@ -1,7 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <author/>
- <comment/>
- <exportmacro/>
  <class>InstructionScreen7</class>
  <widget class="QWidget" name="InstructionScreen7">
   <property name="geometry">
@@ -15,7 +13,25 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>170</y>
+     <width>381</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>The final letter, N, in the encrypted word corresponds to the letter T in
+the decrypted word. So in this case you would enter C-A-T into the space
+provided.
+
+You may change between the decryption screen and the simulation screen
+at any point by clicking the button at the top of each screen.</string>
+   </property>
+  </widget>
  </widget>
- <pixmapfunction/>
+ <resources/>
  <connections/>
 </ui>

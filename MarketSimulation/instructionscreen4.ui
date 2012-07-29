@@ -1,7 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <author/>
- <comment/>
- <exportmacro/>
  <class>InstructionScreen4</class>
  <widget class="QWidget" name="InstructionScreen4">
   <property name="geometry">
@@ -15,7 +13,31 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>90</y>
+     <width>371</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Well done!
+
+Once the experiment is complete you will be paid the final value of your
+shares. You are also able to earn more money by completing a decryption
+task.
+
+In the decryption task you will use a decryption key to decipher an
+encrypted word. Each decryption you complete will add 5 cents to your
+final payment.
+
+The decryption task will be completed on a screen similar to the one
+shown on the next page.</string>
+   </property>
+  </widget>
  </widget>
- <pixmapfunction/>
+ <resources/>
  <connections/>
 </ui>

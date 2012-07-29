@@ -1,7 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <author/>
- <comment/>
- <exportmacro/>
  <class>InstructionScreen6</class>
  <widget class="QWidget" name="InstructionScreen6">
   <property name="geometry">
@@ -15,7 +13,21 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>180</y>
+     <width>371</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Again, by using the decryption key we can see that the second letter in
+the encrypted word, M, corresponds to the letter A in the decrypted word.</string>
+   </property>
+  </widget>
  </widget>
- <pixmapfunction/>
+ <resources/>
  <connections/>
 </ui>

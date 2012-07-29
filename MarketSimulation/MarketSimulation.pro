@@ -27,7 +27,9 @@ SOURCES += main.cpp\
     instructionscreentest3.cpp \
     instructionscreen8.cpp \
     decryptionwindow.cpp \
-    initialallocationscreen.cpp
+    initialallocationscreen.cpp \
+    quest1.cpp \
+    finalscreen.cpp
 
 HEADERS  += mainwindow.h \
     market.h \
@@ -45,7 +47,9 @@ HEADERS  += mainwindow.h \
     instructionscreentest3.h \
     instructionscreen8.h \
     decryptionwindow.h \
-    initialallocationscreen.h
+    initialallocationscreen.h \
+    quest1.h \
+    finalscreen.h
 
 FORMS    += mainwindow.ui \
     simulationwindow.ui \
@@ -62,4 +66,6 @@ FORMS    += mainwindow.ui \
     instructionscreentest3.ui \
     instructionscreen8.ui \
     decryptionwindow.ui \
-    initialallocationscreen.ui
+    initialallocationscreen.ui \
+    quest1.ui \
+    finalscreen.ui

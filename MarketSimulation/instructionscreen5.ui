@@ -1,7 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <author/>
- <comment/>
- <exportmacro/>
  <class>InstructionScreen5</class>
  <widget class="QWidget" name="InstructionScreen5">
   <property name="geometry">
@@ -15,7 +13,28 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>140</y>
+     <width>371</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>At the top of the screen is a decryption key. Use this key to decipher the
+encrypted word. To complete a decryption enter the decrypted word in
+the space provided and press the submit button.
+
+For example look at the encryption key in the screen above. By using the
+decryption key we can see that the first letter in the encrypted word, L,
+Back
+Next
+corresponds to the letter C in the decrypted word.</string>
+   </property>
+  </widget>
  </widget>
- <pixmapfunction/>
+ <resources/>
  <connections/>
 </ui>

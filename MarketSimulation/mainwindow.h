@@ -17,6 +17,8 @@
 #include "instructionscreentest1.h"
 #include "instructionscreentest2.h"
 #include "instructionscreentest3.h"
+#include "quest1.h"
+#include "finalscreen.h"
 #include "titlescreen.h"
 #include "initialallocationscreen.h"
 
@@ -54,8 +56,14 @@ private:
     InstructionScreenTest3* instTest3;
     TitleScreen*        title;
     InitialAllocationScreen* initAlloc;
+    QuestionScreen1* quest1;
+    FinalScreen* fin;
+
+    bool simStarted;
+    bool simRunning;
 
 private slots:
+    void preNavigation();
     void nextScreen();
     void prevScreen();
     void updateTime(QString timeString);

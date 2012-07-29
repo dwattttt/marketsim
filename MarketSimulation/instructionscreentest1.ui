@@ -191,6 +191,22 @@ Allocation</string>
     </item>
    </layout>
   </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>270</y>
+     <width>361</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Please complete this example to test your comprehension.
+
+Set the slider to 75% in asset 1 and 25% in asset 2 and hit the Begin
+button.</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

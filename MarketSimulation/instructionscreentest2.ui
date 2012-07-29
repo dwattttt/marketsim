@@ -1,7 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <author/>
- <comment/>
- <exportmacro/>
  <class>InstructionScreenTest2</class>
  <widget class="QWidget" name="InstructionScreenTest2">
   <property name="geometry">
@@ -15,7 +13,23 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>220</y>
+     <width>371</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>The prices have changed and so has your total wealth.
+
+Reallocate your wealth. Set the slider to 75% in asset 2 and 25% in asset 1
+and hit the submit button.</string>
+   </property>
+  </widget>
  </widget>
- <pixmapfunction/>
+ <resources/>
  <connections/>
 </ui>
