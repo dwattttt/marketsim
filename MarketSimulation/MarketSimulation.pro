@@ -69,3 +69,6 @@ FORMS    += mainwindow.ui \
     initialallocationscreen.ui \
     quest1.ui \
     finalscreen.ui
+
+RESOURCES += \
+    resources.qrc

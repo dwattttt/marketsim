@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="dictionary">data/core-wordnet.txt</file>
+        <file alias="market-data">data/data.dat</file>
+    </qresource>
+</RCC>
