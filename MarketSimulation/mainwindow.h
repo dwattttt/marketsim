@@ -63,6 +63,8 @@ private:
     bool simStarted;
     bool simRunning;
     bool finishedExperiment;
+    bool test1Passed;
+    bool test2Passed;
 
     // To make sure users can't exit until they've finished the experiment
     void closeEvent(QCloseEvent *);
@@ -72,6 +74,8 @@ private slots:
     void nextScreen();
     void prevScreen();
     void updateTime(QString timeString);
+    void passTest1();
+    void passTest2();
 };
 
 #endif // MAINWINDOW_H

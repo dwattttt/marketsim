@@ -13,13 +13,29 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>220</y>
+     <width>361</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Please complete this example to test your comprehension.
+
+Set the slider to 75% in asset 1 and 25% in asset 2 and hit the Begin
+button.</string>
+   </property>
+  </widget>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>120</y>
-     <width>240</width>
-     <height>143</height>
+     <x>50</x>
+     <y>40</y>
+     <width>276</width>
+     <height>168</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -37,7 +53,7 @@
         <item>
          <widget class="QLabel" name="price1Label">
           <property name="text">
-           <string>$5.00</string>
+           <string/>
           </property>
          </widget>
         </item>
@@ -68,7 +84,7 @@
         <item>
          <widget class="QLabel" name="price2Label">
           <property name="text">
-           <string>$5.00</string>
+           <string/>
           </property>
          </widget>
         </item>
@@ -127,7 +143,7 @@
          <number>50</number>
         </property>
         <property name="tracking">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -151,6 +167,51 @@
      </layout>
     </item>
     <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <item>
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>Current Allocation 1:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="curAllocation1Label">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>Current Allocation 2:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="curAllocation2Label">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
      <layout class="QHBoxLayout" name="horizontalLayout_4">
       <item>
        <widget class="QLabel" name="label_5">
@@ -162,7 +223,7 @@
       <item>
        <widget class="QLabel" name="wealthLabel">
         <property name="text">
-         <string>$10.00</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -190,22 +251,6 @@ Allocation</string>
      </layout>
     </item>
    </layout>
-  </widget>
-  <widget class="QLabel" name="label_6">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>270</y>
-     <width>361</width>
-     <height>81</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Please complete this example to test your comprehension.
-
-Set the slider to 75% in asset 1 and 25% in asset 2 and hit the Begin
-button.</string>
-   </property>
   </widget>
  </widget>
  <resources/>

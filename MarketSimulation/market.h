@@ -17,13 +17,15 @@ public:
     double      getPrice1();
     double      getPrice2();
     double      getWealth();
+    double      getAllocation();
+
     void        updateAllocation(double newAllocation);
 
     void        recordData(bool async, bool simWindow = true);
 
     void        startMarket();
 
-    const static int EXPERIMENT_RUNNING_TIME = 50; // running time after tutorial completion in seconds
+    const static int EXPERIMENT_RUNNING_TIME = 50; // seconds to run simulation
 signals:
     void        priceChange();
     void        newTime(QString);
