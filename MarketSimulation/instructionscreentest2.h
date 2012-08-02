@@ -17,6 +17,14 @@ public:
     
 private:
     Ui::InstructionScreenTest2 *ui;
+
+signals:
+    void        testPassed();
+
+private slots:
+    void updatePrices();
+    void displayAllocation();
+    void updateAllocation();
 };
 
 #endif // INSTRUCTIONSCREENTEST2_H

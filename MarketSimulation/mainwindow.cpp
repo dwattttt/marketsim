@@ -74,9 +74,14 @@ MainWindow::MainWindow(QWidget *parent) :
 
     simStarted = false;
     finishedExperiment = false;
+    test1Passed = false;
+    test2Passed = false;
 
     connect(ui->nextButton, SIGNAL(clicked()), this, SLOT(nextScreen()));
     connect(ui->prevButton, SIGNAL(clicked()), this, SLOT(prevScreen()));
+
+    connect(instTest1,SIGNAL(testPassed()),this,SLOT(passTest1()));
+    connect(instTest2,SIGNAL(testPassed()),this,SLOT(passTest2()));
 
     connect(market, SIGNAL(newTime(QString)), this, SLOT(updateTime(QString)));
     this->setWindowFlags(Qt::FramelessWindowHint);
@@ -138,6 +143,16 @@ void MainWindow::preNavigation() {
         ui->prevButton->setEnabled(false);
     }
 
+    // If we hit the first test, can't proceed until passed
+    if (pos - 4 == widgets->begin() && test1Passed == false) {
+        ui->nextButton->setEnabled(false);
+    }
+
+    // If we hit the second test, can't proceed until passed
+    if (pos - 5 == widgets->begin() && test2Passed == false) {
+        ui->nextButton->setEnabled(false);
+    }
+
     //If the sim isn't running, hide the timer labels
     if (!simRunning) {
         ui->timeLabel->setVisible(false);
@@ -196,4 +211,17 @@ void MainWindow::closeEvent(QCloseEvent* event)
     {
         event->accept();
     }
+}
+
+
+void MainWindow::passTest1()
+{
+    test1Passed = true;
+    preNavigation();
+}
+
+void MainWindow::passTest2()
+{
+    test2Passed = true;
+    preNavigation();
 }
