@@ -25,7 +25,7 @@ MainWindow::MainWindow(QWidget *parent) :
     instTest1 = new InstructionScreenTest1(0);
     instTest2 = new InstructionScreenTest2(0);
     instTest3 = new InstructionScreenTest3(0);
-    initAlloc = new InitialAllocationScreen(0);
+    initAlloc = new InitialAllocationScreen(market, 0);
     quest1 = new QuestionScreen1(0);
     fin = new FinalScreen(0);
 
@@ -137,6 +137,7 @@ void MainWindow::preNavigation() {
         //If time hasn't run out, the simulation starts now
         if (!simStarted){
             market->startMarket();
+            sim->initAllocation();
             simRunning = true;
             simStarted = true;
         }

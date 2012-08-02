@@ -17,6 +17,8 @@ public:
     double      getPrice1();
     double      getPrice2();
     double      getWealth();
+    double      getAllocation();
+
     void        updateAllocation(double newAllocation);
 
     void        recordData(bool async, bool simWindow = true);

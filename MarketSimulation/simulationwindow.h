@@ -15,6 +15,7 @@ class SimulationWindow : public QWidget
 public:
     explicit SimulationWindow(Market *market, QWidget *parent);
     ~SimulationWindow();
+    void initAllocation();
     
 private:
     Ui::SimulationWindow *ui;

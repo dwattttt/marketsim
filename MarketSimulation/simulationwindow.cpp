@@ -22,6 +22,13 @@ SimulationWindow::~SimulationWindow()
     delete ui;
 }
 
+void SimulationWindow::initAllocation()
+{
+    ui->allocationSlider->setValue((1 - market->getAllocation())*((double) ui->allocationSlider->maximum()));
+    displayAllocation();
+    updateAllocation();
+}
+
 void SimulationWindow::updatePrices()
 {
     double price1 = market->getPrice1();

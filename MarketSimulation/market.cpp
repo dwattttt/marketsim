@@ -91,6 +91,12 @@ double Market::getWealth()
     return wealth;
 }
 
+double Market::getAllocation()
+{
+    return allocation;
+}
+
+
 void Market::updatePrice()
 {
     if (usingStoredPath)
