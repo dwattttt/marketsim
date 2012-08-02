@@ -31,7 +31,8 @@ SOURCES += main.cpp\
     quest1.cpp \
     finalscreen.cpp \
     decrypt/wordlist.cpp \
-    decrypt/substitutioncipher.cpp
+    decrypt/substitutioncipher.cpp \
+    decrypt/guessinput.cpp
 
 HEADERS  += mainwindow.h \
     market.h \
@@ -53,7 +54,8 @@ HEADERS  += mainwindow.h \
     quest1.h \
     finalscreen.h \
     decrypt/wordlist.h \
-    decrypt/substitutioncipher.h
+    decrypt/substitutioncipher.h \
+    decrypt/guessinput.h
 
 FORMS    += mainwindow.ui \
     simulationwindow.ui \

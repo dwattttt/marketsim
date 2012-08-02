@@ -22,6 +22,8 @@ public:
     void        recordData(bool async, bool simWindow = true);
 
     void        startMarket();
+
+    const static int EXPERIMENT_RUNNING_TIME = 50; // running time after tutorial completion in seconds
 signals:
     void        priceChange();
     void        newTime(QString);

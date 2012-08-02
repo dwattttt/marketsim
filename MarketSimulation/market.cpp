@@ -194,7 +194,7 @@ void Market::recordData(bool async, bool simWindow)
 void Market::updateTime()
 {
     //int secondsLeft = (20*60) - experimentTime->elapsed()/1000;
-    int secondsLeft = (5) - experimentTime->elapsed()/1000;
+    int secondsLeft = EXPERIMENT_RUNNING_TIME - experimentTime->elapsed()/1000;
     int minLeftMod = secondsLeft / 60;
     int secondsLeftMod = secondsLeft % 60;
     QString secStr;
