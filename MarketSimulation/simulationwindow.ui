@@ -230,7 +230,6 @@ Allocation</string>
     </layout>
    </item>
   </layout>
-  <zorder>verticalSpacer</zorder>
  </widget>
  <resources/>
  <connections/>
