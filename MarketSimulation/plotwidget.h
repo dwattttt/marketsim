@@ -2,8 +2,11 @@
 #define PLOTWIDGET_H
 
 #include <QWidget>
+#include <QByteArray>
 #include <qwt/qwt_plot.h>
 #include <qwt/qwt_plot_curve.h>
+
+#include "circularbuffer.h"
 
 namespace Ui {
 class PlotWidget;
@@ -16,12 +19,20 @@ class PlotWidget : public QwtPlot
 public:
     explicit PlotWidget(QWidget *parent = 0);
     ~PlotWidget();
+
+    void addData(double time, double price1, double price2);
     
 private:
     Ui::PlotWidget *ui;
-    QwtPlotCurve* curve;
-    double* xData;
-    double* yData;
+
+    CircularBuffer* asset1Data;
+    CircularBuffer* asset2Data;
+    CircularBuffer* timeData;
+
+    QwtPlotCurve* asset1Curve;
+    QwtPlotCurve* asset2Curve;
+
+    static const int historySize;
 };
 
 #endif // PLOTWIDGET_H

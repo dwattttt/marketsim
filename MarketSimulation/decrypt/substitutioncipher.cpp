@@ -42,7 +42,7 @@ QChar SubstitutionCipher::Map(QChar conv)
     }
 
     QMessageBox::critical(0,"Error","Unable to find appropriate decryption mapping");
-    exit(1);
+    exit(EXIT_FAILURE);
 }
 
 QChar SubstitutionCipher::ReverseMap(QChar conv)
@@ -59,7 +59,7 @@ QChar SubstitutionCipher::ReverseMap(QChar conv)
     }
 	
 	QMessageBox::critical(0,"Error","Unable to find appropriate decryption mapping");
-    exit(1);
+    exit(EXIT_FAILURE);
 }
 
 QVector<CharMapping> SubstitutionCipher::AllMappings()

@@ -20,7 +20,7 @@ Market::Market(QString storedPathFile, QObject *parent, int evolveTimeMS) :
     {
         // We've failed to load the market path. Have to fail
         QMessageBox::critical(0,"Error","Unable to load prices");
-        exit(1);
+        exit(EXIT_FAILURE);
     }
 
     // Initial parameters
@@ -42,7 +42,7 @@ Market::Market(QString storedPathFile, QObject *parent, int evolveTimeMS) :
     {
         // We've failed to open a log file for writing. wtf.
         QMessageBox::critical(0,"Error","Unable to write log file");
-        exit(4);
+        exit(EXIT_FAILURE);
     }
 
     // Set up the time
@@ -114,7 +114,7 @@ void Market::updatePrice()
     wealth = shares1*price1 + shares2*price2;
 
     recordData(false);
-    emit priceChange();
+    emit priceChange(experimentTime->elapsed()/1000);
 }
 
 void Market::updateAllocation(double newAllocation)
@@ -157,7 +157,7 @@ void Market::loadNextPriceFromFile()
     if (!usingStoredPath)
     {
         QMessageBox::critical(0, "Error", "Attempted to load price from file when not using stored data");
-        exit(2);
+        exit(EXIT_FAILURE);
     }
 
     bool ok1, ok2;
@@ -169,7 +169,7 @@ void Market::loadNextPriceFromFile()
     if (!(ok1 && ok2))
     {
         QMessageBox::critical(0, "Error", "Corrupted data file");
-        exit(3);
+        exit(EXIT_FAILURE);
     }
 }
 
@@ -200,7 +200,7 @@ void Market::recordData(bool async, bool simWindow)
 void Market::updateTime()
 {
     //int secondsLeft = (20*60) - experimentTime->elapsed()/1000;
-    int secondsLeft = EXPERIMENT_RUNNING_TIME - experimentTime->elapsed()/1000;
+    int secondsLeft = EXPERIMENT_RUNNING_TIME - round(experimentTime->elapsed()/1000.0);
     int minLeftMod = secondsLeft / 60;
     int secondsLeftMod = secondsLeft % 60;
     QString secStr;

@@ -28,7 +28,7 @@ QVector<QString> LoadFile(QString path)
     {
         // We've failed to load the dictionary. Have to fail
         QMessageBox::critical(0,"Error","Unable to load decryption dictionary");
-        exit(1);
+        exit(EXIT_FAILURE);
     }
 
     QVector<QString> words;

@@ -9,10 +9,10 @@ SimulationWindow::SimulationWindow(Market* market, QWidget *parent) :
 
     this->market = market;
 
-    updatePrices();
+    updatePrices(0);
     displayAllocation();
     updateAllocation();
-    connect(market,SIGNAL(priceChange()),this,SLOT(updatePrices()));
+    connect(market,SIGNAL(priceChange(double)),this,SLOT(updatePrices(double)));
     connect(ui->allocationButton, SIGNAL(clicked()), this, SLOT(updateAllocation()));
     connect(ui->allocationSlider, SIGNAL(valueChanged(int)), this, SLOT(displayAllocation()));
 }
@@ -29,7 +29,7 @@ void SimulationWindow::initAllocation()
     updateAllocation();
 }
 
-void SimulationWindow::updatePrices()
+void SimulationWindow::updatePrices(double time)
 {
     double price1 = market->getPrice1();
     double price2 = market->getPrice2();
@@ -38,6 +38,10 @@ void SimulationWindow::updatePrices()
     ui->price1Label->setText("$" + QString::number(price1,'f',2));
     ui->price2Label->setText("$" + QString::number(price2,'f',2));
     ui->wealthLabel->setText("$" + QString::number(wealth,'f',2));
+
+    if (time != 0) {
+        ui->plotWidget->addData(time, price1, price2);
+    }
 }
 
 void SimulationWindow::displayAllocation()

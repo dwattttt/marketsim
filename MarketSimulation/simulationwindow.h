@@ -24,7 +24,7 @@ private:
     Market* market;
 
 private slots:
-    void updatePrices();
+    void updatePrices(double time);
     void displayAllocation();
     void updateAllocation();
 };

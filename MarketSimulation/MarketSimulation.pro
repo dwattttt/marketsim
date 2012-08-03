@@ -33,7 +33,8 @@ SOURCES += main.cpp\
     decrypt/wordlist.cpp \
     decrypt/substitutioncipher.cpp \
     decrypt/guessinput.cpp \
-    plotwidget.cpp
+    plotwidget.cpp \
+    circularbuffer.cpp
 
 HEADERS  += mainwindow.h \
     market.h \
@@ -57,7 +58,8 @@ HEADERS  += mainwindow.h \
     decrypt/wordlist.h \
     decrypt/substitutioncipher.h \
     decrypt/guessinput.h \
-    plotwidget.h
+    plotwidget.h \
+    circularbuffer.h
 
 FORMS    += mainwindow.ui \
     simulationwindow.ui \
