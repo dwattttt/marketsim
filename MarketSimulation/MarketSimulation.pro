@@ -8,7 +8,7 @@ QT       += core gui
 
 TARGET = MarketSimulation
 TEMPLATE = app
-
+DEFINES += QWT_DLL
 
 SOURCES += main.cpp\
         mainwindow.cpp \
@@ -32,7 +32,8 @@ SOURCES += main.cpp\
     finalscreen.cpp \
     decrypt/wordlist.cpp \
     decrypt/substitutioncipher.cpp \
-    decrypt/guessinput.cpp
+    decrypt/guessinput.cpp \
+    plotwidget.cpp
 
 HEADERS  += mainwindow.h \
     market.h \
@@ -55,7 +56,8 @@ HEADERS  += mainwindow.h \
     finalscreen.h \
     decrypt/wordlist.h \
     decrypt/substitutioncipher.h \
-    decrypt/guessinput.h
+    decrypt/guessinput.h \
+    plotwidget.h
 
 FORMS    += mainwindow.ui \
     simulationwindow.ui \
@@ -74,7 +76,12 @@ FORMS    += mainwindow.ui \
     decryptionwindow.ui \
     initialallocationscreen.ui \
     quest1.ui \
-    finalscreen.ui
+    finalscreen.ui \
+    plotwidget.ui
 
 RESOURCES += \
     resources.qrc
+
+debug:LIBS +=-L../Qwt/lib -lqwtd
+release:LIBS +=-L../Qwt/lib -lqwt
+INCLUDEPATH +=../Qwt/include
