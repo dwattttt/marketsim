@@ -26,6 +26,7 @@ public:
     void        startMarket();
 
     const static int EXPERIMENT_RUNNING_TIME = 60*20; // seconds to run simulation
+    QTime*      experimentTime;
 signals:
     void        priceChange(double time);
     void        newTime(QString);
@@ -47,8 +48,6 @@ private:
     double      shares1;
     double      shares2;
     double      wealth;
-
-    QTime*      experimentTime;
 
     QTimer*     timeTimer;
     QTimer*     evolveTimer;

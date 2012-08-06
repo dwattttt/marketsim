@@ -33,7 +33,7 @@ private:
     SubstitutionCipher *cipher;
     GuessInput *input;
     Market* market;
-
+    QFile*  decryptsFile;
 private slots:
     void DoneClicked();
 };

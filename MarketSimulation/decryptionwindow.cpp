@@ -4,12 +4,25 @@
 #include <QLayoutItem>
 #include <QLabel>
 #include <QVBoxLayout>
+#include <QMessageBox>
 
 DecryptionWindow::DecryptionWindow(Market* market, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::DecryptionWindow)
 {
     ui->setupUi(this);
+
+    this->market = market;
+    QString decryptsFileName = "Decrypts " + QDateTime::currentDateTime().toString(" - MM-dd hh.mm.txt");
+    decryptsFile = new QFile(decryptsFileName);
+    bool ok = decryptsFile->open(QIODevice::WriteOnly | QIODevice::Text);
+
+    if (!ok)
+    {
+        // We've failed to open a log file for writing. wtf.
+        QMessageBox::critical(0,"Error","Unable to write user decryptions file");
+        exit(EXIT_FAILURE);
+    }
 
     connect(ui->btnSubmit, SIGNAL(clicked()), this, SLOT(DoneClicked()));
 
@@ -62,6 +75,13 @@ void DecryptionWindow::DoneClicked()
     {
         score++;
         ResetTask();
+
+        QByteArray data;
+        int expTime = market->experimentTime->elapsed();
+        data.clear();
+        data.append(QString::number(expTime) + "\n");
+        decryptsFile->write(data);
+        decryptsFile->flush();
     }
 
 }

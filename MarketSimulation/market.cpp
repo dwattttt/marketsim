@@ -33,10 +33,10 @@ Market::Market(QString storedPathFile, QObject *parent, int evolveTimeMS) :
     // Set up the log files
     QString logFileName = "Experiment" + QDateTime::currentDateTime().toString(" - MM-dd hh.mm.txt");
     logFile = new QFile(logFileName);
-    ok = logFile->open(QIODevice::WriteOnly);
+    ok = logFile->open(QIODevice::WriteOnly | QIODevice::Text);
     QString swapLogFileName = "Experiment Swaps" + QDateTime::currentDateTime().toString(" - MM-dd hh.mm.txt");
     swapLogFile = new QFile(swapLogFileName);
-    ok = ok && swapLogFile->open(QIODevice::WriteOnly);
+    ok = ok && swapLogFile->open(QIODevice::WriteOnly | QIODevice::Text);
 
     if (!ok)
     {
