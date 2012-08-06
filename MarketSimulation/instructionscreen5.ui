@@ -44,6 +44,11 @@
      </item>
      <item>
       <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>At the top of the screen is a decryption key. Use this key to decipher the
 encrypted word. To complete a decryption enter the decrypted word in

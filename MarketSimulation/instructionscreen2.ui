@@ -44,6 +44,11 @@
      </item>
      <item>
       <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>Make your initial allocation by setting the slider to the percentage of the
 $10 endowment that you wish to allocate to each asset.

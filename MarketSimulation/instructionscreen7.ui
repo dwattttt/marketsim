@@ -44,6 +44,11 @@
      </item>
      <item>
       <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>The final letter, N, in the encrypted word corresponds to the letter T in
 the decrypted word. So in this case you would enter C-A-T into the space

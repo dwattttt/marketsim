@@ -6,7 +6,7 @@
 #include <qwt/qwt_plot_layout.h>
 #include <qwt/qwt_legend.h>
 
-const int PlotWidget::historySize = 60;
+const int PlotWidget::historySize = 60*20;
 
 PlotWidget::PlotWidget(QWidget *parent) :
     QwtPlot(parent),
@@ -27,7 +27,8 @@ PlotWidget::PlotWidget(QWidget *parent) :
     setAxisTitle(QwtPlot::xBottom, " Time [s]");
     setAxisScaleDraw(QwtPlot::xBottom,
                      new QwtScaleDraw());
-    //setAxisScale(QwtPlot::xBottom, 0, historySize); // Own Change
+    setAxisAutoScale(QwtPlot::xBottom, false);
+    setAxisScale(QwtPlot::xBottom, 0, historySize);
     setAxisLabelRotation(QwtPlot::xBottom, -50.0);
     setAxisLabelAlignment(QwtPlot::xBottom, Qt::AlignLeft | Qt::AlignBottom);
 

@@ -25,7 +25,7 @@ public:
 
     void        startMarket();
 
-    const static int EXPERIMENT_RUNNING_TIME = 120; // seconds to run simulation
+    const static int EXPERIMENT_RUNNING_TIME = 60*20; // seconds to run simulation
 signals:
     void        priceChange(double time);
     void        newTime(QString);

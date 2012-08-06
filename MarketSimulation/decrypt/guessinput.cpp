@@ -1,11 +1,6 @@
 #include "guessinput.h"
 #include <QLabel>
 #include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QWidget>
-#include <QSpacerItem>
-#include <QFontMetrics>
-
 #include "decryptionwindow.h"
 GuessInput::GuessInput(QObject *parent, QGridLayout *layout, QString word, SubstitutionCipher *cipher)
     : QObject(parent)
@@ -18,15 +13,10 @@ GuessInput::GuessInput(QObject *parent, QGridLayout *layout, QString word, Subst
     {
         QLabel *letterLabel = new QLabel(cipher->ReverseMap(word[i]));
         QLineEdit *entryField = new QLineEdit();
-        entryField->setFixedSize(20,20);
-        QWidget *layoutContainer = new QWidget();
-        QGridLayout *subLayout = new QGridLayout();
-        QSpacerItem *spacer = new QSpacerItem(30,20);
-        subLayout->addWidget(letterLabel,0,0);
-        subLayout->addWidget(entryField,1,0);
-        subLayout->addItem(spacer,0, 1, 1, 2);
-        layoutContainer->setLayout(subLayout);
-        layout->addWidget(layoutContainer,0,i);
+
+        layout->addWidget(letterLabel,0,i);
+        layout->addWidget(entryField,1,i);
+
         fields.append(entryField); // Keep a reference to the guesses so they can be checked
         connect(entryField,SIGNAL(textChanged(QString)), this, SLOT(FieldChanged(QString)));
         entryField->setMaxLength(1);
