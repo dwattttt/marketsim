@@ -23,7 +23,7 @@ public:
     int GetScore();
     static const int MIN_DECRYPTION_LEN = 3;
     static const int MAX_DECRYPTION_LEN = 4;
-
+    static const bool RANDOMIZE_KEYS = true; // If true, keys will appear out-of-order
 private:
     void ResetTask();
     Ui::DecryptionWindow *ui;

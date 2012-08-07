@@ -16,7 +16,7 @@ GuessInput::GuessInput(QObject *parent, QGridLayout *layout, QString word, Subst
     // Lay out a ciphered label and text field for each letter in the word to be guessed
     for(int i = 0; i < word.length();i++)
     {
-        QLabel *letterLabel = new QLabel(cipher->ReverseMap(word[i]));
+        QLabel *letterLabel = new QLabel(cipher->ReverseMap(word[i]).toUpper());
         QLineEdit *entryField = new QLineEdit();
         entryField->setFixedSize(20,20);
         QWidget *layoutContainer = new QWidget();

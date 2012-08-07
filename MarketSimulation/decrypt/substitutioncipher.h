@@ -10,10 +10,10 @@ typedef QPair<QChar,QChar> CharMapping;
 class SubstitutionCipher
 {
 public:
-	explicit SubstitutionCipher();
+    explicit SubstitutionCipher();
 	QChar Map(QChar conv);
 	QChar ReverseMap(QChar conv);
-    QVector<CharMapping> AllMappings();
+    QVector<CharMapping> AllMappings(bool randomize = true);
 
 private:
     QVector<CharMapping> mapping;

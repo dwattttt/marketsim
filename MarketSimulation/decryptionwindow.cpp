@@ -51,12 +51,12 @@ void DecryptionWindow::ResetTask()
     DeleteGridChildren(ui->keyGrid);
 
     // Step through all cipher mappings and display a key in grid format
-    QVector<CharMapping> mappings = cipher->AllMappings();
+    QVector<CharMapping> mappings = cipher->AllMappings(RANDOMIZE_KEYS);
     int count = 0;
     foreach(CharMapping map, mappings)
     {
-        QLabel *nextLbl = new QLabel(QString("%1 : %2").arg(map.first, map.second));
-        ui->keyGrid->addWidget(nextLbl, count / 5, count % 5);
+        QLabel *nextLbl = new QLabel(QString("%1 : %2").arg(map.first.toUpper(), map.second.toUpper()));
+        ui->keyGrid->addWidget(nextLbl, count % 5, count / 5);
         count++;
     }
 

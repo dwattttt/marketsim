@@ -25,7 +25,7 @@ SubstitutionCipher::SubstitutionCipher()
         mapping.append(
                     QPair<QChar,QChar>(original[i], original[mapList[i]])
                     );
-	}
+    }
 }
 
 QChar SubstitutionCipher::Map(QChar conv)
@@ -62,10 +62,10 @@ QChar SubstitutionCipher::ReverseMap(QChar conv)
     exit(EXIT_FAILURE);
 }
 
-QVector<CharMapping> SubstitutionCipher::AllMappings()
+QVector<CharMapping> SubstitutionCipher::AllMappings(bool randomize)
 {
     QVector<CharMapping> rtn(mapping);
-    std::random_shuffle(rtn.begin(), rtn.end());
+    if (randomize) std::random_shuffle(rtn.begin(), rtn.end());
 
     return rtn;
 }
