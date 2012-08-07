@@ -136,7 +136,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Done</string>
+            <string>Submit</string>
            </property>
           </widget>
          </item>
