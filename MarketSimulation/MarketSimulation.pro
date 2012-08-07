@@ -86,7 +86,12 @@ FORMS    += mainwindow.ui \
 RESOURCES += \
     resources.qrc
 
-debug:LIBS +=-L../Qwt/lib -lqwtd
-release:LIBS +=-L../Qwt/lib -lqwt
+Debug {
+    LIBS += -L../Qwt/lib -lqwtd
+}
+
+Release {
+    LIBS +=  -L../Qwt/lib -lqwt
+}
 
 INCLUDEPATH +=../Qwt/include
