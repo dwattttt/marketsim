@@ -65,6 +65,7 @@ private:
     bool finishedExperiment;
     bool test1Passed;
     bool test2Passed;
+    bool test3Passed;
 
     // To make sure users can't exit until they've finished the experiment
     void closeEvent(QCloseEvent *);
@@ -76,6 +77,7 @@ private slots:
     void updateTime(QString timeString);
     void passTest1();
     void passTest2();
+    void passTest3();
 };
 
 #endif // MAINWINDOW_H

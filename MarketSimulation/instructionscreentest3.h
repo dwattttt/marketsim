@@ -2,6 +2,7 @@
 #define INSTRUCTIONSCREENTEST3_H
 
 #include <QWidget>
+#include "decryptionwindow.h"
 
 namespace Ui {
 class InstructionScreenTest3;
@@ -13,6 +14,7 @@ class InstructionScreenTest3 : public QWidget
     
 public:
     explicit InstructionScreenTest3(QWidget *parent = 0);
+    DecryptionWindow *win;
     ~InstructionScreenTest3();
     
 private:

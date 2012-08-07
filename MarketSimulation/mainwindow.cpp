@@ -76,13 +76,14 @@ MainWindow::MainWindow(QWidget *parent) :
     finishedExperiment = false;
     test1Passed = false;
     test2Passed = false;
+    test3Passed = false;
 
     connect(ui->nextButton, SIGNAL(clicked()), this, SLOT(nextScreen()));
     connect(ui->prevButton, SIGNAL(clicked()), this, SLOT(prevScreen()));
 
     connect(instTest1,SIGNAL(testPassed()),this,SLOT(passTest1()));
     connect(instTest2,SIGNAL(testPassed()),this,SLOT(passTest2()));
-
+    connect(instTest3->win, SIGNAL(DecryptionCompleted()), this, SLOT(passTest3()));
     connect(market, SIGNAL(newTime(QString)), this, SLOT(updateTime(QString)));
     this->setWindowFlags(Qt::FramelessWindowHint);
     this->showFullScreen();
@@ -156,6 +157,11 @@ void MainWindow::preNavigation() {
         ui->nextButton->setEnabled(false);
     }
 
+    // Cannot continue until a decryption has been completed
+    if (pos - 10 == widgets->begin() && test3Passed == false) {
+        ui->nextButton->setEnabled(false);
+    }
+
     //If the sim isn't running, hide the timer labels
     if (!simRunning) {
         ui->timeLabel->setVisible(false);
@@ -226,5 +232,11 @@ void MainWindow::passTest1()
 void MainWindow::passTest2()
 {
     test2Passed = true;
+    preNavigation();
+}
+
+void MainWindow::passTest3()
+{
+    test3Passed = true;
     preNavigation();
 }

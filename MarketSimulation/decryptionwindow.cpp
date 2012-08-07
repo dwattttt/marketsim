@@ -6,29 +6,39 @@
 #include <QVBoxLayout>
 #include <QMessageBox>
 
-DecryptionWindow::DecryptionWindow(Market* market, QWidget *parent) :
+DecryptionWindow::DecryptionWindow(Market* market, QWidget *parent, QVector<QString> wordOverride) :
     QWidget(parent),
     ui(new Ui::DecryptionWindow)
 {
     ui->setupUi(this);
 
     this->market = market;
-    QString decryptsFileName = "Decrypts " + QDateTime::currentDateTime().toString(" - MM-dd hh.mm.txt");
-    decryptsFile = new QFile(decryptsFileName);
-    bool ok = decryptsFile->open(QIODevice::WriteOnly | QIODevice::Text);
-
-    if (!ok)
+    if (market != NULL)
     {
-        // We've failed to open a log file for writing. wtf.
-        QMessageBox::critical(0,"Error","Unable to write user decryptions file");
-        exit(EXIT_FAILURE);
+        QString decryptsFileName = "Decrypts " + QDateTime::currentDateTime().toString(" - MM-dd hh.mm.txt");
+        decryptsFile = new QFile(decryptsFileName);
+        bool ok = decryptsFile->open(QIODevice::WriteOnly | QIODevice::Text);
+
+        if (!ok)
+        {
+            // We've failed to open a log file for writing. wtf.
+            QMessageBox::critical(0,"Error","Unable to write user decryptions file");
+            exit(EXIT_FAILURE);
+        }
     }
 
     connect(ui->btnSubmit, SIGNAL(clicked()), this, SLOT(DoneClicked()));
 
     score = 0;
-    wordyStuff = WordList(":/dictionary")
-            .Generate(MIN_DECRYPTION_LEN,MAX_DECRYPTION_LEN);
+    if (wordOverride.count() == 0)
+    {
+        wordyStuff = WordList(":/dictionary")
+                .Generate(MIN_DECRYPTION_LEN,MAX_DECRYPTION_LEN);
+    }
+    else
+    {
+        wordyStuff = wordOverride;
+    }
     ResetTask();
 }
 
@@ -62,7 +72,7 @@ void DecryptionWindow::ResetTask()
 
     // TODO delete old input if exists
     DeleteGridChildren(ui->guessGrid);
-    input = new GuessInput(this, ui->guessGrid, "cat", cipher);
+    input = new GuessInput(this, ui->guessGrid, wordyStuff[score % wordyStuff.count()], cipher);
 
     input->Validate();
 }
@@ -70,20 +80,22 @@ void DecryptionWindow::ResetTask()
 void DecryptionWindow::DoneClicked()
 {
     bool isCorrect = input->Validate();
-
     if (isCorrect)
     {
+        emit DecryptionCompleted();
         score++;
         ResetTask();
 
-        QByteArray data;
-        int expTime = market->experimentTime->elapsed();
-        data.clear();
-        data.append(QString::number(expTime) + "\n");
-        decryptsFile->write(data);
-        decryptsFile->flush();
+        if (market != NULL)
+        {
+            QByteArray data;
+            int expTime = market->experimentTime->elapsed();
+            data.clear();
+            data.append(QString::number(expTime) + "\n");
+            decryptsFile->write(data);
+            decryptsFile->flush();
+        }
     }
-
 }
 
 int DecryptionWindow::GetScore()

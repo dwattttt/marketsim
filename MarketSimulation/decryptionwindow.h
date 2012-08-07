@@ -18,7 +18,7 @@ class DecryptionWindow : public QWidget
     Q_OBJECT
     
 public:
-    explicit DecryptionWindow(Market* market, QWidget *parent = 0);
+    explicit DecryptionWindow(Market* market, QWidget *parent = 0, QVector<QString> wordOverride = QVector<QString>());
     ~DecryptionWindow();
     int GetScore();
     static const int MIN_DECRYPTION_LEN = 3;
@@ -36,6 +36,8 @@ private:
     QFile*  decryptsFile;
 private slots:
     void DoneClicked();
+signals:
+    void DecryptionCompleted();
 };
 
 #endif // DECRYPTIONWINDOW_H
