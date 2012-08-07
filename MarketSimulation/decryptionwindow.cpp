@@ -62,7 +62,7 @@ void DecryptionWindow::ResetTask()
 
     // TODO delete old input if exists
     DeleteGridChildren(ui->guessGrid);
-    input = new GuessInput(this, ui->guessGrid, wordyStuff[score], cipher);
+    input = new GuessInput(this, ui->guessGrid, "cat", cipher);
 
     input->Validate();
 }

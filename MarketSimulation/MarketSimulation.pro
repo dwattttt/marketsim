@@ -34,7 +34,8 @@ SOURCES += main.cpp\
     decrypt/substitutioncipher.cpp \
     decrypt/guessinput.cpp \
     plotwidget.cpp \
-    circularbuffer.cpp
+    circularbuffer.cpp \
+    QPictureLabel.cpp
 
 HEADERS  += mainwindow.h \
     market.h \
@@ -59,7 +60,8 @@ HEADERS  += mainwindow.h \
     decrypt/substitutioncipher.h \
     decrypt/guessinput.h \
     plotwidget.h \
-    circularbuffer.h
+    circularbuffer.h \
+    QPictureLabel.hpp
 
 FORMS    += mainwindow.ui \
     simulationwindow.ui \
@@ -84,5 +86,7 @@ FORMS    += mainwindow.ui \
 RESOURCES += \
     resources.qrc
 
-LIBS +=-L../Qwt/lib -lqwt
+debug:LIBS +=-L../Qwt/lib -lqwtd
+release:LIBS +=-L../Qwt/lib -lqwt
+
 INCLUDEPATH +=../Qwt/include

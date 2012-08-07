@@ -30,17 +30,27 @@
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <spacer name="verticalSpacer">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
+      <widget class="QFrame" name="frame">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
        </property>
-       <property name="sizeHint" stdset="0">
+       <property name="minimumSize">
         <size>
-         <width>20</width>
-         <height>40</height>
+         <width>0</width>
+         <height>30</height>
         </size>
        </property>
-      </spacer>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_2"/>
+      </widget>
      </item>
      <item>
       <widget class="QLabel" name="label">
@@ -50,27 +60,13 @@
         </font>
        </property>
        <property name="text">
-        <string>The final letter, N, in the encrypted word corresponds to the letter T in
-the decrypted word. So in this case you would enter C-A-T into the space
-provided.
+        <string>The final letter, T, has been mapped to the same letter in the decrypted
+word. So in this case you would enter C-A-T into the space provided.
 
 You may change between the decryption screen and the simulation screen
-at any point by clicking the button at the top of each screen.</string>
+at any point by clicking the next/previous buttons at the bottom of the screen.</string>
        </property>
       </widget>
-     </item>
-     <item>
-      <spacer name="verticalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
-       </property>
-      </spacer>
      </item>
     </layout>
    </item>

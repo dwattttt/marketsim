@@ -30,17 +30,27 @@
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <spacer name="verticalSpacer">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
+      <widget class="QFrame" name="frame">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
        </property>
-       <property name="sizeHint" stdset="0">
+       <property name="minimumSize">
         <size>
-         <width>20</width>
-         <height>40</height>
+         <width>0</width>
+         <height>26</height>
         </size>
        </property>
-      </spacer>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2"/>
+      </widget>
      </item>
      <item>
       <widget class="QLabel" name="label">
@@ -50,30 +60,9 @@
         </font>
        </property>
        <property name="text">
-        <string>At the top of the screen is a decryption key. Use this key to decipher the
-encrypted word. To complete a decryption enter the decrypted word in
-the space provided and press the submit button.
-
-For example look at the encryption key in the screen above. By using the
-decryption key we can see that the first letter in the encrypted word, L,
-Back
-Next
-corresponds to the letter C in the decrypted word.</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;At the top of the screen is a decryption key. Use this key to decipher the&lt;/p&gt;&lt;p&gt;encrypted word. To complete a decryption enter the decrypted word in&lt;/p&gt;&lt;p&gt;the space provided and press the submit button.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;For example look at the encryption key in the screen above. By using the&lt;/p&gt;&lt;p&gt;decryption key we can see that the first letter in the encrypted word, E,&lt;/p&gt;&lt;p&gt;corresponds to the letter C in the decrypted word.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-     </item>
-     <item>
-      <spacer name="verticalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
-       </property>
-      </spacer>
      </item>
     </layout>
    </item>
