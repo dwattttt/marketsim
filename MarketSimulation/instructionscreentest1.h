@@ -18,6 +18,10 @@ public:
 private:
     Ui::InstructionScreenTest1 *ui;
 
+    const static double price1 = 5;
+    const static double price2 = 5;
+    const static double wealth = 10.0;
+
 signals:
     void        testPassed();
 

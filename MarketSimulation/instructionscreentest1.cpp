@@ -1,5 +1,6 @@
 #include "instructionscreentest1.h"
 #include "ui_instructionscreentest1.h"
+#include "plotwidget.h"
 
 InstructionScreenTest1::InstructionScreenTest1(QWidget *parent) :
     QWidget(parent),
@@ -10,6 +11,12 @@ InstructionScreenTest1::InstructionScreenTest1(QWidget *parent) :
     updatePrices();
     displayAllocation();
     updateAllocation();
+
+    // show empty graph
+    PlotWidget *plot = new PlotWidget(this);
+    plot->addData(0, price1, price2);
+    ui->plotWidget->layout()->addWidget(plot);
+
     connect(ui->allocationButton, SIGNAL(clicked()), this, SLOT(updateAllocation()));
     connect(ui->allocationSlider, SIGNAL(valueChanged(int)), this, SLOT(displayAllocation()));
 }
@@ -19,14 +26,8 @@ InstructionScreenTest1::~InstructionScreenTest1()
     delete ui;
 }
 
-
-
 void InstructionScreenTest1::updatePrices()
 {
-    double price1 = 5;
-    double price2 = 5;
-    double wealth = 10;
-
     ui->price1Label->setText("$" + QString::number(price1,'f',2));
     ui->price2Label->setText("$" + QString::number(price2,'f',2));
     ui->wealthLabel->setText("$" + QString::number(wealth,'f',2));

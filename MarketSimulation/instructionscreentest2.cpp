@@ -1,5 +1,6 @@
 #include "instructionscreentest2.h"
 #include "ui_instructionscreentest2.h"
+#include "plotwidget.h"
 
 InstructionScreenTest2::InstructionScreenTest2(QWidget *parent) :
     QWidget(parent),
@@ -9,6 +10,13 @@ InstructionScreenTest2::InstructionScreenTest2(QWidget *parent) :
     displayAllocation();
     updateAllocation();
     updatePrices();
+
+    // Show movement in prices on graph
+    PlotWidget *plot = new PlotWidget(this);
+    plot->addData(0, 5.0, 5.0);
+    plot->addData(10, price1, price2);
+    ui->plotWidget->layout()->addWidget(plot);
+
     connect(ui->allocationButton, SIGNAL(clicked()), this, SLOT(updateAllocation()));
     connect(ui->allocationSlider, SIGNAL(valueChanged(int)), this, SLOT(displayAllocation()));
 }
@@ -20,10 +28,6 @@ InstructionScreenTest2::~InstructionScreenTest2()
 
 void InstructionScreenTest2::updatePrices()
 {
-    double price1 = 10;
-    double price2 = 5;
-    double wealth = 17.5;
-
     ui->price1Label->setText("$" + QString::number(price1,'f',2));
     ui->price2Label->setText("$" + QString::number(price2,'f',2));
     ui->wealthLabel->setText("$" + QString::number(wealth,'f',2));
