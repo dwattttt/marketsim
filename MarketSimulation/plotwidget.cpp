@@ -5,8 +5,7 @@
 #include <qwt/qwt_plot_canvas.h>
 #include <qwt/qwt_plot_layout.h>
 #include <qwt/qwt_legend.h>
-
-const int PlotWidget::historySize = 60*20;
+#include "market.h"
 
 PlotWidget::PlotWidget(QWidget *parent) :
     QwtPlot(parent),
@@ -28,7 +27,7 @@ PlotWidget::PlotWidget(QWidget *parent) :
     setAxisScaleDraw(QwtPlot::xBottom,
                      new QwtScaleDraw());
     setAxisAutoScale(QwtPlot::xBottom, false);
-    setAxisScale(QwtPlot::xBottom, 0, historySize);
+    setAxisScale(QwtPlot::xBottom, 0, Market::EXPERIMENT_RUNNING_TIME);
     setAxisLabelRotation(QwtPlot::xBottom, -50.0);
     setAxisLabelAlignment(QwtPlot::xBottom, Qt::AlignLeft | Qt::AlignBottom);
 
@@ -39,9 +38,9 @@ PlotWidget::PlotWidget(QWidget *parent) :
     setAxisLabelAlignment(QwtPlot::yLeft, Qt::AlignLeft | Qt::AlignBottom);
 
     // Setup the data
-    asset1Data = new CircularBuffer(historySize);
-    asset2Data = new CircularBuffer(historySize);
-    timeData = new CircularBuffer(historySize);
+    asset1Data = new CircularBuffer((Market::EXPERIMENT_RUNNING_TIME)/2 + 4); // Running time, /2 for data every 2 seconds, + a safety buffer
+    asset2Data = new CircularBuffer((Market::EXPERIMENT_RUNNING_TIME)/2 + 4);
+    timeData = new CircularBuffer((Market::EXPERIMENT_RUNNING_TIME)/2 + 4);
 
     asset1Curve = new QwtPlotCurve("Asset 1");
     asset1Curve->setPen(QPen(Qt::red));

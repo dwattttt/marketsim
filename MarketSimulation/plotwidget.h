@@ -31,8 +31,6 @@ private:
 
     QwtPlotCurve* asset1Curve;
     QwtPlotCurve* asset2Curve;
-
-    static const int historySize;
 };
 
 #endif // PLOTWIDGET_H

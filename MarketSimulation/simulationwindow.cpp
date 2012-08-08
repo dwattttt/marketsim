@@ -39,9 +39,7 @@ void SimulationWindow::updatePrices(double time)
     ui->price2Label->setText("$" + QString::number(price2,'f',2));
     ui->wealthLabel->setText("$" + QString::number(wealth,'f',2));
 
-    //if (time != 0) {
-        ui->plotWidget->addData(time, price1, price2);
-    //}
+    ui->plotWidget->addData(time, price1, price2);
 }
 
 void SimulationWindow::displayAllocation()

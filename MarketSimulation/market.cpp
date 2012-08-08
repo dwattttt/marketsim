@@ -99,6 +99,12 @@ double Market::getAllocation()
 
 void Market::updatePrice()
 {
+    if (experimentTime->elapsed()/1000.0 > EXPERIMENT_RUNNING_TIME+1)
+    {
+        // Experiment is over; stop the event timers
+        evolveTimer->stop();
+        timeTimer->stop();
+    }
     if (usingStoredPath)
     {
         // Load next prices from the stored data
@@ -114,7 +120,7 @@ void Market::updatePrice()
     wealth = shares1*price1 + shares2*price2;
 
     recordData(false);
-    emit priceChange(experimentTime->elapsed()/1000);
+    emit priceChange(round(experimentTime->elapsed()/1000.0));
 }
 
 void Market::updateAllocation(double newAllocation)
@@ -163,6 +169,11 @@ void Market::loadNextPriceFromFile()
     bool ok1, ok2;
     QByteArray priceLine = storedPath->readLine().trimmed();
     QList<QByteArray> priceStrings = priceLine.split(',');
+    if (priceStrings.size() != 2) {
+        // Malformed line, or we read past the end
+        QMessageBox::critical(0, "Error", "Corrupted data file");
+        exit(EXIT_FAILURE);
+    }
     price1 = priceStrings.at(0).toDouble(&ok1);
     price2 = priceStrings.at(1).toDouble(&ok2);
 

@@ -294,9 +294,6 @@ Allocation</string>
     </widget>
    </item>
   </layout>
-  <zorder></zorder>
-  <zorder>frame</zorder>
-  <zorder>plotWidget</zorder>
  </widget>
  <customwidgets>
   <customwidget>
