@@ -1,6 +1,6 @@
 //Source: http://stackoverflow.com/questions/5653114/display-image-in-qt-to-fit-label-size
 
-#include "QPainter.h"
+#include <QPainter>
 
 #include "QPictureLabel.hpp"
 
@@ -28,14 +28,14 @@ void QPictureLabel::_displayImage()
     {
         _qpCurrent = _qpSource; // If width already fits inside label, no scaling needed
     }
-    else if (pw > cw && ph > ch && pw/cw > ph/ch || //both width and high are bigger, ratio at high is bigger or
-        pw > cw && ph <= ch || //only the width is bigger or
-        pw < cw && ph < ch && cw/pw < ch/ph //both width and height is smaller, ratio at width is smaller
+    else if ((pw > cw && ph > ch && pw/cw) > ph/ch || //both width and high are bigger, ratio at high is bigger or
+        (pw > cw && ph <= ch) || //only the width is bigger or
+        (pw < cw && ph < ch && cw/pw < ch/ph) //both width and height is smaller, ratio at width is smaller
         )
         _qpCurrent = _qpSource.scaledToWidth(cw, Qt::SmoothTransformation);
-    else if (pw > cw && ph > ch && pw/cw <= ph/ch || //both width and high are bigger, ratio at width is bigger or
-        ph > ch && pw <= cw || //only the height is bigger or
-        pw < cw && ph < ch && cw/pw > ch/ph //both width and height is smaller, ratio at height is smaller
+    else if ((pw > cw && ph > ch && pw/cw) <= ph/ch || //both width and high are bigger, ratio at width is bigger or
+        (ph > ch && pw <= cw) || //only the height is bigger or
+        (pw < cw && ph < ch && cw/pw > ch/ph) //both width and height is smaller, ratio at height is smaller
         )
         _qpCurrent = _qpSource.scaledToHeight(ch, Qt::SmoothTransformation);
 

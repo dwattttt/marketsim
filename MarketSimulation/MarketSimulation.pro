@@ -8,7 +8,6 @@ QT       += core gui
 
 TARGET = MarketSimulation
 TEMPLATE = app
-DEFINES += QWT_DLL
 
 SOURCES += main.cpp\
         mainwindow.cpp \
@@ -86,12 +85,17 @@ FORMS    += mainwindow.ui \
 RESOURCES += \
     resources.qrc
 
-Debug {
-    LIBS += -L../Qwt/lib -lqwtd
+win32 {
+    DEFINES += QWT_DLL
+    INCLUDEPATH +=../Qwt/include
+    LIBS += -L../Qwt/lib
 }
 
-Release {
-    LIBS +=  -L../Qwt/lib -lqwt
+CONFIG(debug, debug|release) {
+    LIBS += -lqwtd
 }
 
-INCLUDEPATH +=../Qwt/include
+CONFIG(release, debug|release) {
+    LIBS += -lqwt
+}
+

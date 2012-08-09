@@ -1,8 +1,8 @@
 // Source: http://stackoverflow.com/questions/5653114/display-image-in-qt-to-fit-label-size
 
-#include "QImage.h"
-#include "QPixmap.h"
-#include "QLabel.h"
+#include <QImage>
+#include <QPixmap>
+#include <QLabel>
 
 class QPictureLabel : public QLabel
 {
