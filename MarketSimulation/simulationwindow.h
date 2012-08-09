@@ -17,6 +17,9 @@ public:
     ~SimulationWindow();
     void initAllocation();
     
+signals:
+    void updateWealth(double wealth);
+
 private:
     Ui::SimulationWindow *ui;
 

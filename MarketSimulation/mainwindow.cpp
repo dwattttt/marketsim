@@ -85,6 +85,14 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(instTest2,SIGNAL(testPassed()),this,SLOT(passTest2()));
     connect(instTest3->win, SIGNAL(DecryptionCompleted()), this, SLOT(passTest3()));
     connect(market, SIGNAL(newTime(QString)), this, SLOT(updateTime(QString)));
+    connect(sim,SIGNAL(updateWealth(double)),this,SLOT(updateWealth(double)));
+
+    // Hide the labels (until the right time)
+    ui->wealthLabel->setHidden(true);
+    ui->wealthLabelDesc->setHidden(true);
+    ui->timeLabel->setHidden(true);
+    ui->timeLabelDesc->setHidden(true);
+
     this->setWindowFlags(Qt::FramelessWindowHint);
     this->showFullScreen();
 }
@@ -94,12 +102,19 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::preNavigation() {
+void MainWindow::updateWealth(double wealth)
+{
+    ui->wealthLabel->setText("$" + QString::number(wealth,'f',2));
+}
 
+void MainWindow::preNavigation()
+{
     ui->prevButton->setEnabled(true);
     ui->nextButton->setEnabled(true);
     ui->timeLabel->setVisible(true);
     ui->timeLabelDesc->setVisible(true);
+    ui->wealthLabel->setVisible(true);
+    ui->wealthLabelDesc->setVisible(true);
     ui->prevButton->setHidden(false);
     ui->nextButton->setHidden(false);
 
@@ -162,17 +177,18 @@ void MainWindow::preNavigation() {
         ui->nextButton->setEnabled(false);
     }
 
-    //If the sim isn't running, hide the timer labels
+    //If the sim isn't running, hide the timer/wealth labels
     if (!simRunning) {
         ui->timeLabel->setVisible(false);
         ui->timeLabelDesc->setVisible(false);
+        ui->wealthLabel->setVisible(false);
+        ui->wealthLabelDesc->setVisible(false);
     }
 
 }
 
 void MainWindow::nextScreen()
 {
-
     //End() isn't that last item in a list, it's the one after that.
     //(WTF?)
     if (pos + 1 != widgets->end()) {
@@ -189,7 +205,6 @@ void MainWindow::nextScreen()
 
 void MainWindow::prevScreen()
 {
-
     if (pos != widgets->begin()) {
         pos--;
         preNavigation();

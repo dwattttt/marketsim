@@ -35,6 +35,9 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+public slots:
+    void updateWealth(double wealth);
+
 private:
     Ui::MainWindow *ui;
 

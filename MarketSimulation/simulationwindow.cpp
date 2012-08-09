@@ -9,7 +9,12 @@ SimulationWindow::SimulationWindow(Market* market, QWidget *parent) :
 
     this->market = market;
 
+    // Hiding the wealth label here; simplest option for getting rid of it
+    ui->wealthLabel->setHidden(true);
+    ui->wealthLabelDesc->setHidden(true);
+
     updatePrices(0);
+    updateWealth(market->getWealth());
     displayAllocation();
     updateAllocation();
     connect(market,SIGNAL(priceChange(double)),this,SLOT(updatePrices(double)));
@@ -39,6 +44,7 @@ void SimulationWindow::updatePrices(double time)
     ui->price2Label->setText("$" + QString::number(price2,'f',2));
     ui->wealthLabel->setText("$" + QString::number(wealth,'f',2));
 
+    emit updateWealth(wealth);
     ui->plotWidget->addData(time, price1, price2);
 }
 

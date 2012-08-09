@@ -242,7 +242,7 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <item>
-           <widget class="QLabel" name="label_5">
+           <widget class="QLabel" name="wealthLabelDesc">
             <property name="font">
              <font>
               <pointsize>12</pointsize>
