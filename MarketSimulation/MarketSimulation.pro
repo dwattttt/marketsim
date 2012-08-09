@@ -88,7 +88,7 @@ RESOURCES += \
 win32 {
     DEFINES += QWT_DLL
     INCLUDEPATH +=../Qwt/include
-    LIBS += -L../Qwt/lib
+    LIBS += -L../Qwt/lib/
 }
 
 CONFIG(debug, debug|release) {

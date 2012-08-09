@@ -16,7 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
     title = new TitleScreen(0);
     inst1 = new InstructionScreen1(0);
     inst2 = new InstructionScreen2(0);
-    inst3 = new InstructionScreen3(0);
+    //inst3 = new InstructionScreen3(0);
     inst4 = new InstructionScreen4(0);
     inst5 = new InstructionScreen5(0);
     inst6 = new InstructionScreen6(0);
@@ -32,7 +32,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->stackedWidget->addWidget(title);
     ui->stackedWidget->addWidget(inst1);
     ui->stackedWidget->addWidget(inst2);
-    ui->stackedWidget->addWidget(inst3);
+    //ui->stackedWidget->addWidget(inst3);
     ui->stackedWidget->addWidget(inst4);
     ui->stackedWidget->addWidget(inst5);
     ui->stackedWidget->addWidget(inst6);
@@ -50,18 +50,18 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // Make a list of widget pointers, so we can easily swap between them
     widgets = new QList<QWidget*>();
-    widgets->push_back(title);
-    widgets->push_back(inst1);
-    widgets->push_back(inst2);
-    widgets->push_back(inst3);
-    widgets->push_back(instTest1);
-    widgets->push_back(instTest2);
-    widgets->push_back(inst4);
-    widgets->push_back(inst5);
-    widgets->push_back(inst6);
-    widgets->push_back(inst7);
-    widgets->push_back(instTest3);
-    widgets->push_back(inst8);
+    widgets->push_back(title); //1
+    widgets->push_back(inst1); //2
+    widgets->push_back(inst2); //3
+    //widgets->push_back(inst3); //4
+    widgets->push_back(instTest1); //5
+    widgets->push_back(instTest2); //6
+    widgets->push_back(inst4); //7
+    widgets->push_back(inst5); //8
+    widgets->push_back(inst6); //9
+    widgets->push_back(inst7); //10
+    widgets->push_back(instTest3); //11
+    widgets->push_back(inst8); //12
     widgets->push_back(initAlloc);
     widgets->push_back(sim);
     widgets->push_back(dec);

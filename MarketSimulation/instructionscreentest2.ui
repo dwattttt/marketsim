@@ -313,10 +313,9 @@ Allocation</string>
       </font>
      </property>
      <property name="text">
-      <string>The prices have changed and so has your total wealth.
-
-Reallocate your wealth. Set the slider to 75% in asset 2 and 25% in asset 1
-and hit the submit button.</string>
+      <string>The prices have changed and so has your total wealth!
+Reallocate your wealth. Set the slider to 75% in Asset 2 and 25% in Asset 1 and hit the submit button.
+</string>
      </property>
     </widget>
    </item>

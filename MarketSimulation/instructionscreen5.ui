@@ -30,6 +30,19 @@
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
       <widget class="QFrame" name="frame">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -60,9 +73,29 @@
         </font>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;At the top of the screen is a decryption key. Use this key to decipher the&lt;/p&gt;&lt;p&gt;encrypted word. To complete a decryption enter the decrypted word in&lt;/p&gt;&lt;p&gt;the space provided and press the submit button.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;For example look at the encryption key in the screen above. By using the&lt;/p&gt;&lt;p&gt;decryption key we can see that the first letter in the encrypted word, E,&lt;/p&gt;&lt;p&gt;corresponds to the letter C in the decrypted word.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;At the top of the screen is a decryption key. Use this key to decipher the encrypted word. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;To complete a decryption enter the decrypted letters in the space provided and press&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;the submit button. For example, by using the decryption key we can see that the first&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;letter in the encrypted word, &lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#ff0000;&quot;&gt;E&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;, corresponds to the letter &lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#ff0000;&quot;&gt;C&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; in the decrypted word. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
      </item>
     </layout>
    </item>
