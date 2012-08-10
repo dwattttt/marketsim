@@ -124,17 +124,13 @@ void MainWindow::preNavigation()
     }
 
     //If we've reached the end, hide both buttons
-    if (pos + 1 != widgets->end()) {
-    }
-    else {
+    if (pos + 1 == widgets->end()) {
         ui->nextButton->setHidden(true);
         ui->prevButton->setHidden(true);
     }
 
     //If we've reached the questionaire, hide the previous button
-    if (pos + 2 != widgets->end()) {
-    }
-    else {
+    if (pos + 2 == widgets->end()) {
         ui->prevButton->setHidden(true);
     }
 
@@ -163,12 +159,12 @@ void MainWindow::preNavigation()
     }
 
     // If we hit the first test, can't proceed until passed
-    if (pos - 4 == widgets->begin() && test1Passed == false) {
+    if (pos - 3 == widgets->begin() && test1Passed == false) {
         ui->nextButton->setEnabled(false);
     }
 
     // If we hit the second test, can't proceed until passed
-    if (pos - 5 == widgets->begin() && test2Passed == false) {
+    if (pos - 4 == widgets->begin() && test2Passed == false) {
         ui->nextButton->setEnabled(false);
     }
 
