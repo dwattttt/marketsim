@@ -198,7 +198,7 @@ void MainWindow::nextScreen()
     }
     // If we're now at the end, allow them to exit
 
-    if (pos + 1 == widgets->end()) {
+    if (pos + 1 == widgets->end() ) {
         finishedExperiment = true;
     }
 }
