@@ -2,6 +2,7 @@
 #define TITLESCREEN_H
 
 #include <QWidget>
+#include <QString>
 
 namespace Ui {
 class TitleScreen;

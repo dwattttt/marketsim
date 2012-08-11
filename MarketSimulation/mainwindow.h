@@ -41,6 +41,7 @@ public:
 
 public slots:
     void updateWealth(double wealth);
+    void enableNextButton();
 
 protected:
     void keyPressEvent(QKeyEvent* event);

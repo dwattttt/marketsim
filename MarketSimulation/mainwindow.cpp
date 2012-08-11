@@ -88,6 +88,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(sim,SIGNAL(updateWealth(double)),this,SLOT(updateWealth(double)));
     connect(market, SIGNAL(allocationUpdated(double)), this, SLOT(waitForInitialAlocation(double)));
 
+    connect(quest1, SIGNAL(gimmeANextButton()), this, SLOT(enableNextButton()));
+
     connect(market, SIGNAL(priceChange(double)), this, SLOT(displayWealthLabel()) );
 
     // Hide the labels (until the right time)
@@ -147,8 +149,10 @@ void MainWindow::preNavigation()
     }
 
     //If we've reached the questionaire, hide the previous button
+    // Sean: And disable the next button
     if (pos + 2 == widgets->end()) {
         ui->prevButton->setHidden(true);
+        ui->nextButton->setEnabled(false);
     }
 
     //Third last screen is decryption
@@ -184,17 +188,23 @@ void MainWindow::preNavigation()
 
     // If we hit the first test, can't proceed until passed
     if (pos - 3 == widgets->begin() && test1Passed == false) {
+#ifdef QT_NO_DEBUG
         ui->nextButton->setEnabled(false);
+#endif
     }
 
     // If we hit the second test, can't proceed until passed
     if (pos - 4 == widgets->begin() && test2Passed == false) {
+#ifdef QT_NO_DEBUG
         ui->nextButton->setEnabled(false);
+#endif
     }
 
     // Cannot continue until a decryption has been completed
     if (pos - 9 == widgets->begin() && test3Passed == false) {
+#ifdef QT_NO_DEBUG
         ui->nextButton->setEnabled(false);
+#endif
     }
 
     if (*pos == initAlloc)
@@ -284,6 +294,11 @@ void MainWindow::passTest3()
 {
     test3Passed = true;
     preNavigation();
+}
+
+void MainWindow::enableNextButton()
+{
+    ui->nextButton->setEnabled(true);
 }
 
 void MainWindow::waitForInitialAlocation(double newAllocation)

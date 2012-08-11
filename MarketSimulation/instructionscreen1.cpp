@@ -6,6 +6,7 @@ InstructionScreen1::InstructionScreen1(QWidget *parent) :
     ui(new Ui::InstructionScreen1)
 {
     ui->setupUi(this);
+
 }
 
 InstructionScreen1::~InstructionScreen1()
