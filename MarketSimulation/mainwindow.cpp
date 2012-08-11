@@ -154,6 +154,7 @@ void MainWindow::preNavigation()
         if (!simStarted){
             market->startMarket();
             sim->initAllocation();
+            displayWealthLabel();
             simRunning = true;
             simStarted = true;
         }

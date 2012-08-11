@@ -74,6 +74,7 @@ void Market::startMarket()
     evolveTimer->start();
     timeTimer->start();
     experimentTime->start();
+    updateTime();
 }
 
 double Market::getPrice1()

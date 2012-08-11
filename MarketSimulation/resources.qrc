@@ -7,5 +7,6 @@
         <file alias="decrypt_1">data/decrypt_1.png</file>
         <file alias="decrypt_2">data/decrypt_2.png</file>
         <file alias="decrypt_3">data/decrypt_3.png</file>
+        <file alias="market">data/market.png</file>
     </qresource>
 </RCC>
