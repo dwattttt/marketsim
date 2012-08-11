@@ -88,6 +88,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(sim,SIGNAL(updateWealth(double)),this,SLOT(updateWealth(double)));
     connect(market, SIGNAL(allocationUpdated(double)), this, SLOT(waitForInitialAlocation(double)));
 
+    connect(market, SIGNAL(priceChange(double)), this, SLOT(displayWealthLabel()) );
+
     // Hide the labels (until the right time)
     ui->wealthLabel->setHidden(true);
     ui->wealthLabelDesc->setHidden(true);
@@ -275,4 +277,9 @@ void MainWindow::waitForInitialAlocation(double newAllocation)
     {
         ui->nextButton->setEnabled(true);
     }
+}
+
+void MainWindow::displayWealthLabel()
+{
+    ui->wealthLabel->setText(QString("$") + QString::number(market->getWealth(), 'f', 2));
 }

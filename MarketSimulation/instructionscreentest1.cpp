@@ -8,17 +8,15 @@ InstructionScreenTest1::InstructionScreenTest1(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    updatePrices();
-    displayAllocation();
-    updateAllocation();
-
     // show empty graph
     PlotWidget *plot = new PlotWidget(this);
     plot->addData(0, price1, price2);
     ui->plotWidget->layout()->addWidget(plot);
 
-    connect(ui->allocationButton, SIGNAL(clicked()), this, SLOT(updateAllocation()));
-    connect(ui->allocationSlider, SIGNAL(valueChanged(int)), this, SLOT(displayAllocation()));
+    ui->investment->updateAllocation(0.5);
+    ui->investment->updatePrices(price1, price2);
+    ui->investment->updateWealth(wealth);
+    connect(ui->investment, SIGNAL(allocationUpdated(double)), this, SLOT(updateAllocation(double)));
 }
 
 InstructionScreenTest1::~InstructionScreenTest1()
@@ -26,28 +24,11 @@ InstructionScreenTest1::~InstructionScreenTest1()
     delete ui;
 }
 
-void InstructionScreenTest1::updatePrices()
+void InstructionScreenTest1::updateAllocation(double newAllocation)
 {
-    ui->price1Label->setText("$" + QString::number(price1,'f',2));
-    ui->price2Label->setText("$" + QString::number(price2,'f',2));
-    ui->wealthLabel->setText("$" + QString::number(wealth,'f',2));
-}
-
-void InstructionScreenTest1::displayAllocation()
-{
-    double newAllocation = 1 - (ui->allocationSlider->value() / ((double) ui->allocationSlider->maximum()));
-    ui->allocation1Label->setText(QString::number(100*newAllocation,'f',0) + "%");
-    ui->allocation2Label->setText(QString::number(100*(1-newAllocation),'f',0) + "%");
-}
-
-void InstructionScreenTest1::updateAllocation()
-{
-    double newAllocation = 1 - (ui->allocationSlider->value() / ((double) ui->allocationSlider->maximum()));
-    ui->curAllocation1Label->setText(QString::number(100*newAllocation,'f',0) + "%");
-    ui->curAllocation2Label->setText(QString::number(100*(1-newAllocation),'f',0) + "%");
-    if (QString::number(100*newAllocation,'f',0) == QString::number(75,'f',0)) {
+    ui->investment->updateAllocation(newAllocation);
+    if (newAllocation == 0.75)
+    {
         emit testPassed();
-        ui->allocationButton->setEnabled(false);
     }
-
 }

@@ -16,9 +16,6 @@ public:
     explicit SimulationWindow(Market *market, QWidget *parent);
     ~SimulationWindow();
     void initAllocation();
-    
-signals:
-    void updateWealth(double wealth);
 
 private:
     Ui::SimulationWindow *ui;
@@ -28,8 +25,7 @@ private:
 
 private slots:
     void updatePrices(double time);
-    void displayAllocation();
-    void updateAllocation();
+    void updateAllocation(double newAllocation);
 };
 
 #endif // SIMULATIONWINDOW_H

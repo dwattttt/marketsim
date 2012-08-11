@@ -33,7 +33,8 @@ SOURCES += main.cpp\
     decrypt/guessinput.cpp \
     plotwidget.cpp \
     circularbuffer.cpp \
-    QPictureLabel.cpp
+    QPictureLabel.cpp \
+    investmentslider.cpp
 
 HEADERS  += mainwindow.h \
     market.h \
@@ -58,7 +59,8 @@ HEADERS  += mainwindow.h \
     decrypt/guessinput.h \
     plotwidget.h \
     circularbuffer.h \
-    QPictureLabel.hpp
+    QPictureLabel.hpp \
+    investmentslider.h
 
 FORMS    += mainwindow.ui \
     simulationwindow.ui \
@@ -77,7 +79,8 @@ FORMS    += mainwindow.ui \
     initialallocationscreen.ui \
     quest1.ui \
     finalscreen.ui \
-    plotwidget.ui
+    plotwidget.ui \
+    investmentslider.ui
 
 RESOURCES += \
     resources.qrc

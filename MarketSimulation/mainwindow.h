@@ -82,6 +82,7 @@ private slots:
     void passTest2();
     void passTest3();
     void waitForInitialAlocation(double newAllocation);
+    void displayWealthLabel();
 };
 
 #endif // MAINWINDOW_H

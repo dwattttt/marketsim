@@ -26,9 +26,7 @@ signals:
     void        testPassed();
 
 private slots:
-    void updatePrices();
-    void displayAllocation();
-    void updateAllocation();
+    void updateAllocation(double newAllocation);
 };
 
 #endif // INSTRUCTIONSCREENTEST2_H

@@ -48,7 +48,7 @@
         </spacer>
        </item>
        <item>
-        <widget class="QGroupBox" name="groupBox">
+        <widget class="QGroupBox" name="keyBox">
          <property name="enabled">
           <bool>true</bool>
          </property>
