@@ -3,7 +3,11 @@
 
 #include <QMainWindow>
 #include <QList>
+#include <QKeyEvent>
 #include <QCloseEvent>
+#include <QtDebug>
+#include <QKeySequence>
+#include <QTimer>
 #include "market.h"
 #include "simulationwindow.h"
 #include "decryptionwindow.h"
@@ -37,6 +41,9 @@ public:
 
 public slots:
     void updateWealth(double wealth);
+
+protected:
+    void keyPressEvent(QKeyEvent* event);
 
 private:
     Ui::MainWindow *ui;

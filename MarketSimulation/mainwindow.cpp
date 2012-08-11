@@ -105,6 +105,20 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::keyPressEvent(QKeyEvent* event)
+{
+#ifndef QT_NO_DEBUG
+    if (event->matches(QKeySequence::Print))
+    {
+        QTimer::singleShot(250, qApp, SLOT(quit())); // CTRL+P to Quit the program
+    }
+    if (event->matches(QKeySequence::Redo))
+    {
+        this->updateTime("");                        // CTRL+Y to prematurely end test
+    }
+#endif
+}
+
 void MainWindow::updateWealth(double wealth)
 {
     ui->wealthLabel->setText("$" + QString::number(wealth,'f',2));
