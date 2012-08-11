@@ -25,12 +25,12 @@ public:
 
     void        startMarket();
 
-    const static int EXPERIMENT_RUNNING_TIME = 60*20; // seconds to run simulation
+    const static int EXPERIMENT_RUNNING_TIME = 1*20; // seconds to run simulation
     QTime*      experimentTime;
 signals:
     void        priceChange(double time);
     void        newTime(QString);
-
+    void        allocationUpdated(double amtToAsset1);
 public slots:
 
 private:

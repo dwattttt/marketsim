@@ -14,7 +14,8 @@ class FinalScreen : public QWidget
 public:
     explicit FinalScreen(QWidget *parent = 0);
     ~FinalScreen();
-    
+    void Populate(double investmentValue, int decryptionsCompleted);
+    static const double DECRYPTION_VALUE = 0.15;
 private:
     Ui::finalscreen *ui;
 };

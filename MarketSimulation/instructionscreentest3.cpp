@@ -13,9 +13,16 @@ InstructionScreenTest3::InstructionScreenTest3(QWidget *parent) :
 
     win = new DecryptionWindow(NULL,this,testWords);
     ui->decryptionWidget->layout()->addWidget(win);
+
+    connect(win,SIGNAL(DecryptionCompleted()),this,SLOT(DisableOnDecryptionComplete()));
 }
 
 InstructionScreenTest3::~InstructionScreenTest3()
 {
     delete ui;
+}
+
+void InstructionScreenTest3::DisableOnDecryptionComplete()
+{
+    win->Disable();
 }

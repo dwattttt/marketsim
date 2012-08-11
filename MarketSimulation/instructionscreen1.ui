@@ -44,23 +44,22 @@
      </item>
      <item>
       <widget class="QLabel" name="label">
+       <property name="minimumSize">
+        <size>
+         <width>600</width>
+         <height>0</height>
+        </size>
+       </property>
        <property name="font">
         <font>
          <pointsize>12</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Thank you for agreeing to take part in this study.
-
-If you do not understand any of the following instructions please raise
-your hand and the experimenter will clarify them for you.
-
-During this experiment you will invest $10 in a stock market simulation.
-
-You may choose any non-negative allocation between 2 assets.
-
-Your initial allocation will be made on a screen similar to the one shown on
-the next page. Please click the Next button.</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Thank you for agreeing to take part in this study.&lt;/p&gt;&lt;p&gt;If you do not understand any of the following instructions please raise your hand and the experimenter will clarify them for you.&lt;/p&gt;&lt;p&gt;During this experiment you will invest $10 in a stock market simulation.&lt;/p&gt;&lt;p&gt;There are 2 assets, Asset 1 and Asset 2. You may choose any non-negative allocation between Asset 1 and Asset 2.&lt;/p&gt;&lt;p&gt;Your initial allocation will be made on a screen like one shown on the next page. Please click the Next button.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
        </property>
       </widget>
      </item>

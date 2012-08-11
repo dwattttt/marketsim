@@ -1,5 +1,6 @@
 #include "initialallocationscreen.h"
 #include "ui_initialallocationscreen.h"
+#include "plotwidget.h"
 
 InitialAllocationScreen::InitialAllocationScreen(Market* market, QWidget *parent) :
     QWidget(parent),
@@ -8,6 +9,11 @@ InitialAllocationScreen::InitialAllocationScreen(Market* market, QWidget *parent
     ui->setupUi(this);
 
     this->market = market;
+
+    // show empty graph
+    PlotWidget *plot = new PlotWidget(this);
+    plot->addData(0, 5.0, 5.0);
+    ui->plotWidget->layout()->addWidget(plot);
 
     displayAllocation();
     updateAllocation();

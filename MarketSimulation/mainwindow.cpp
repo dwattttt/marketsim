@@ -86,6 +86,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(instTest3->win, SIGNAL(DecryptionCompleted()), this, SLOT(passTest3()));
     connect(market, SIGNAL(newTime(QString)), this, SLOT(updateTime(QString)));
     connect(sim,SIGNAL(updateWealth(double)),this,SLOT(updateWealth(double)));
+    connect(market, SIGNAL(allocationUpdated(double)), this, SLOT(waitForInitialAlocation(double)));
 
     // Hide the labels (until the right time)
     ui->wealthLabel->setHidden(true);
@@ -179,6 +180,16 @@ void MainWindow::preNavigation()
         ui->nextButton->setEnabled(false);
     }
 
+    if (*pos == initAlloc)
+    {
+        ui->nextButton->setEnabled(false);
+    }
+
+    if (*pos == fin)
+    {
+        fin->Populate(market->getWealth(), dec->GetScore());
+    }
+
     //If the sim isn't running, hide the timer/wealth labels
     if (!simRunning) {
         ui->timeLabel->setVisible(false);
@@ -256,4 +267,12 @@ void MainWindow::passTest3()
 {
     test3Passed = true;
     preNavigation();
+}
+
+void MainWindow::waitForInitialAlocation(double newAllocation)
+{
+    if (*pos == initAlloc)
+    {
+        ui->nextButton->setEnabled(true);
+    }
 }

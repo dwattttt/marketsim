@@ -62,7 +62,7 @@
        </property>
        <property name="minimumSize">
         <size>
-         <width>500</width>
+         <width>600</width>
          <height>0</height>
         </size>
        </property>
@@ -72,7 +72,7 @@
         </font>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The final letter, T, has been mapped to the same letter in the decrypted word. So in this case you would enter C-A-T into the space provided.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The final letter, T, has been mapped to the same letter in the decrypted word. In this case you would enter C-A-T into the space provided, and click the Submit button.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
        <property name="wordWrap">
         <bool>true</bool>

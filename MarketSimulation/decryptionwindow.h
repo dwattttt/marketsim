@@ -21,6 +21,7 @@ public:
     explicit DecryptionWindow(Market* market, QWidget *parent = 0, QVector<QString> wordOverride = QVector<QString>());
     ~DecryptionWindow();
     int GetScore();
+    void Disable();
     static const int MIN_DECRYPTION_LEN = 3;
     static const int MAX_DECRYPTION_LEN = 4;
     static const bool RANDOMIZE_KEYS = true; // If true, keys will appear out-of-order

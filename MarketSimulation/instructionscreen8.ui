@@ -46,7 +46,7 @@
       <widget class="QLabel" name="label">
        <property name="minimumSize">
         <size>
-         <width>500</width>
+         <width>600</width>
          <height>0</height>
         </size>
        </property>
@@ -56,7 +56,7 @@
         </font>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Well done!&lt;/p&gt;&lt;p&gt;The experiment will run for 20 minutes. During this time you may change between the decryption task and the simulation task as many times as you wish. To do this use the Next and Previous buttons once the experiment has started. &lt;/p&gt;&lt;p&gt;At the end of the experiment you will be paid your total wealth from the stock market simulation as well as 15 cents for each decryption you complete.&lt;/p&gt;&lt;p&gt;If you have any questions about the instructions please raise your hand now.&lt;/p&gt;&lt;p&gt;To finish the instructions and begin the experiment click the Next button. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Well done!&lt;/p&gt;&lt;p&gt;The experiment will run for 20 minutes. During this time you may change between the decryption task and the simulation task as many times as you wish. To do this, use the Next and Previous buttons once the experiment has started. &lt;/p&gt;&lt;p&gt;At the end of the experiment you will be paid your investment value from the stock market simulation as well as 15 cents for each decryption you complete.&lt;/p&gt;&lt;p&gt;If you have any questions about the instructions please raise your hand now.&lt;/p&gt;&lt;p&gt;To finish the instructions and begin the experiment click the Next button. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
        <property name="wordWrap">
         <bool>true</bool>

@@ -81,6 +81,7 @@ private slots:
     void passTest1();
     void passTest2();
     void passTest3();
+    void waitForInitialAlocation(double newAllocation);
 };
 
 #endif // MAINWINDOW_H

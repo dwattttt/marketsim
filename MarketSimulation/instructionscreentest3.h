@@ -19,6 +19,9 @@ public:
     
 private:
     Ui::InstructionScreenTest3 *ui;
+
+private slots:
+    void DisableOnDecryptionComplete();
 };
 
 #endif // INSTRUCTIONSCREENTEST3_H

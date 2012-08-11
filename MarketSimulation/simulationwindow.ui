@@ -249,7 +249,7 @@
              </font>
             </property>
             <property name="text">
-             <string>Total Wealth:</string>
+             <string>Investment Value:</string>
             </property>
            </widget>
           </item>

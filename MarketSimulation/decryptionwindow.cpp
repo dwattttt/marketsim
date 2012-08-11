@@ -82,7 +82,6 @@ void DecryptionWindow::DoneClicked()
     bool isCorrect = input->Validate();
     if (isCorrect)
     {
-        emit DecryptionCompleted();
         score++;
         ResetTask();
 
@@ -95,6 +94,8 @@ void DecryptionWindow::DoneClicked()
             decryptsFile->write(data);
             decryptsFile->flush();
         }
+
+        emit DecryptionCompleted();
     }
 }
 
@@ -106,5 +107,11 @@ int DecryptionWindow::GetScore()
 DecryptionWindow::~DecryptionWindow()
 {
     delete ui;
+}
+
+void DecryptionWindow::Disable()
+{
+    input->Disable();
+    ui->btnSubmit->setEnabled(false);
 }
 

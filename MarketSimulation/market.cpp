@@ -129,6 +129,8 @@ void Market::updateAllocation(double newAllocation)
 
     shares2 = wealth/(price1 * (allocation/(1-allocation)) + price2);
     shares1 = (wealth - shares2*price2)/price1;
+
+    emit allocationUpdated(newAllocation);
 }
 
 std::pair<double, double> Market::dWienerSample()

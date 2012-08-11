@@ -64,3 +64,11 @@ void GuessInput::FieldChanged(QString text)
 {
     Validate();
 }
+
+void GuessInput::Disable()
+{
+    foreach (QLineEdit *field, fields)
+    {
+        field->setEnabled(false);
+    }
+}

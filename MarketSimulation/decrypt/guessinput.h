@@ -14,6 +14,7 @@ class GuessInput : public QObject
 public:
     explicit    GuessInput(QObject *parent, QGridLayout *layout, QString word, SubstitutionCipher *cipher);
     bool        Validate();
+    void        Disable();
 
 private:
     QString guessWord;
