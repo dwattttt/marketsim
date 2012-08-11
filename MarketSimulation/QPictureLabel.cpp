@@ -24,7 +24,7 @@ void QPictureLabel::_displayImage()
     float cw = width(), ch = height();
     float pw = _qpCurrent.width(), ph = _qpCurrent.height();
 
-    if (_qpSource.width() < cw)
+    if (_qpSource.width() < cw && _qpSource.height() < ch)
     {
         _qpCurrent = _qpSource; // If width already fits inside label, no scaling needed
     }

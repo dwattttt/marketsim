@@ -44,24 +44,22 @@
      </item>
      <item>
       <widget class="QLabel" name="label">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="font">
         <font>
          <pointsize>12</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Well done!
-
-Once the experiment is complete you will be paid the final value of your
-shares. You are also able to earn more money by completing a decryption
-task.
-
-In the decryption task you will use a decryption key to decipher an
-encrypted word. Each decryption you complete will add 5 cents to your
-final payment.
-
-The decryption task will be completed on a screen similar to the one
-shown on the next page.</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Well done!&lt;/p&gt;&lt;p&gt;You may change your allocation at any time. Once the experiment is complete you will be paid your total wealth. &lt;/p&gt;&lt;p&gt;You are also able to earn money by completing a decryption task. In the decryption task you will use a decryption key to decipher an encrypted word. Each decryption you complete will add 15 cents to your final payment.&lt;/p&gt;&lt;p&gt;The decryption task will be completed on a screen similar to the one shown on the next page. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
