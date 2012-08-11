@@ -16,7 +16,6 @@ SOURCES += main.cpp\
     titlescreen.cpp \
     instructionscreen1.cpp \
     instructionscreen2.cpp \
-    instructionscreen3.cpp \
     instructionscreentest1.cpp \
     instructionscreentest2.cpp \
     instructionscreen4.cpp \
@@ -42,7 +41,6 @@ HEADERS  += mainwindow.h \
     titlescreen.h \
     instructionscreen1.h \
     instructionscreen2.h \
-    instructionscreen3.h \
     instructionscreentest1.h \
     instructionscreentest2.h \
     instructionscreen4.h \
@@ -67,7 +65,6 @@ FORMS    += mainwindow.ui \
     titlescreen.ui \
     instructionscreen1.ui \
     instructionscreen2.ui \
-    instructionscreen3.ui \
     instructionscreentest1.ui \
     instructionscreentest2.ui \
     instructionscreen4.ui \

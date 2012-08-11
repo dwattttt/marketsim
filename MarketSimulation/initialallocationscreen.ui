@@ -312,9 +312,10 @@ Allocation</string>
       </font>
      </property>
      <property name="text">
-      <string>Here you can set your initial allocation of wealth for the experiment.
-
-  DO NOT CLICK NEXT UNTIL INSTRUCTED.</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Here you can set your initial allocation between Asset 1 and Asset 2 by moving the slider and then clicking Submit Allocation.&lt;/p&gt;&lt;p&gt;DO NOT CLICK NEXT UNTIL INSTRUCTED &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
      </property>
     </widget>
    </item>

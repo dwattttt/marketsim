@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>638</width>
+    <width>666</width>
     <height>407</height>
    </rect>
   </property>
@@ -21,7 +21,7 @@
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>68</width>
+       <width>20</width>
        <height>20</height>
       </size>
      </property>
@@ -44,16 +44,22 @@
      </item>
      <item>
       <widget class="QLabel" name="label">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
        <property name="font">
         <font>
          <pointsize>12</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>You may make your initial allocation by setting the slider to the percentage of the $10 endowment that you wish to allocate to each asset.
-Moving the slider to the left will allocate more to Asset 1 and less to Asset 2. Moving it to the right will allocate more to Asset 2 and less to Asset 1.
-Once you have decided on an allocation click the submit button. You MUST click the submit button in order to change you allocation.
-</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You may make your initial allocation by setting the slider to the percentage of the $10 endowment that you wish to allocate to each asset.&lt;/p&gt;&lt;p&gt;Moving the slider to the left will allocate more to Asset 1 and less to Asset 2. Moving it to the right will allocate more to Asset 2 and less to Asset 1.&lt;/p&gt;&lt;p&gt;Once you have decided on an allocation click the submit button. You MUST click the Submit Allocation button in order to change your allocation.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -79,7 +85,7 @@ Once you have decided on an allocation click the submit button. You MUST click t
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>67</width>
+       <width>20</width>
        <height>20</height>
       </size>
      </property>
