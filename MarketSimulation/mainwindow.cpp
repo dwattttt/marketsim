@@ -158,6 +158,12 @@ void MainWindow::preNavigation()
         ui->prevButton->setEnabled(false);
     }
 
+    //Fifth last screen is initial allocation
+    //Can't go back from this screen
+    if (pos + 5 == widgets->end()) {
+        ui->prevButton->setEnabled(false);
+    }
+
     // If we hit the first test, can't proceed until passed
     if (pos - 3 == widgets->begin() && test1Passed == false) {
         ui->nextButton->setEnabled(false);
@@ -169,7 +175,7 @@ void MainWindow::preNavigation()
     }
 
     // Cannot continue until a decryption has been completed
-    if (pos - 10 == widgets->begin() && test3Passed == false) {
+    if (pos - 9 == widgets->begin() && test3Passed == false) {
         ui->nextButton->setEnabled(false);
     }
 
