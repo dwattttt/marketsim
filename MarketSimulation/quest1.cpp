@@ -10,7 +10,7 @@ QuestionScreen1::QuestionScreen1(QWidget *parent) :
     ui(new Ui::quest1)
 {
     ui->setupUi(this);
-    connect(ui->submitButton, SIGNAL(poop()), this, SLOT(on_submitButton_clicked()) );
+    //connect(ui->submitButton, SIGNAL(poop()), this, SLOT(on_submitButton_clicked()) );
     ui->errorMsg->setHidden(true);
 }
 
@@ -32,6 +32,9 @@ void QuestionScreen1::on_submitButton_clicked()
     if ( !(ui->EQ->isChecked() || ui->GT->isChecked() || ui->LT->isChecked()) ) return chuckSkitz();
     if (ui->A4->text().length() < 1) return chuckSkitz();
     if ( !(ui->True->isChecked() || ui->False->isChecked()) ) return chuckSkitz();
+
+    // hide error message once checks have passed
+    ui->errorMsg->setHidden(true);
 
 
     // get answers and save them to file
