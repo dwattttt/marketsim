@@ -10,7 +10,7 @@ QuestionScreen1::QuestionScreen1(QWidget *parent) :
     ui(new Ui::quest1)
 {
     ui->setupUi(this);
-    connect(ui->submitButton, SIGNAL(priceChange(double)), this, SLOT(on_submitButton_clicked()) );
+    connect(ui->submitButton, SIGNAL(poop()), this, SLOT(on_submitButton_clicked()) );
 
 }
 
