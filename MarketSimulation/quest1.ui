@@ -227,7 +227,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry">
          <rect>
           <x>60</x>
-          <y>100</y>
+          <y>110</y>
           <width>391</width>
           <height>41</height>
          </rect>
@@ -241,7 +241,7 @@ p, li { white-space: pre-wrap; }
         <widget class="QRadioButton" name="GT">
          <property name="geometry">
           <rect>
-           <x>50</x>
+           <x>250</x>
            <y>20</y>
            <width>101</width>
            <height>17</height>
@@ -267,7 +267,7 @@ p, li { white-space: pre-wrap; }
         <widget class="QRadioButton" name="LT">
          <property name="geometry">
           <rect>
-           <x>260</x>
+           <x>50</x>
            <y>20</y>
            <width>101</width>
            <height>17</height>
@@ -282,7 +282,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>80</y>
+          <y>90</y>
           <width>481</width>
           <height>41</height>
          </rect>
