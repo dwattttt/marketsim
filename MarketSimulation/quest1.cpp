@@ -56,6 +56,9 @@ void QuestionScreen1::on_submitButton_clicked()
 
     // // has now submitted results //
 
+    // hide the submit button
+    ui->submitButton->setEnabled(false);
+
     // show the next button
     emit gimmeANextButton();
 }
