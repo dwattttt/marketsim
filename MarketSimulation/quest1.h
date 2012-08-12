@@ -26,6 +26,7 @@ private slots:
 
 private:
     Ui::quest1 *ui;
+    void chuckSkitz();
 };
 
 #endif // QUEST1_H
