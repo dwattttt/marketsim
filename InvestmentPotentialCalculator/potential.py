@@ -86,11 +86,5 @@ if __name__ == '__main__':
     print 'Optimal possible "wealth": ' + str(wealth_possible(ga.bestIndividual()))
     print 'Allocations chart:'
     allocations = [val * 5 for val in ga.bestIndividual()]
-    userFriendly = []
-    for i in range(1,len(allocations)):
-        if allocations[i-1] == allocations[i]:
-            userFriendly.append('K')
-        else:
-            userFriendly.append(allocations[i])
-    print userFriendly
+    print allocations
     
