@@ -1,0 +1,19 @@
+Uses a pyevolve genetic algorithm to calculate a profitable human-achievable path through a pre-determined market. 
+
+Since it's difficult to accurately switch at right time, and since transition points are not constrained to periods of low market activity, the actual profit achieved will fall severely short of the predicted profit. Either that or there's a bug floating around somewhere causing these absurd numbers. To see something really crazy, drop STEP_SIZE back to 1....
+
+Don't wait around for 10,000 generations of the algorithm, observe the stats until it clearly isn't going anywhere and then just Ctrl+C
+
+REQUIRES
+
+ setuptools
+  32 bit users can use the installer: http://pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11.win32-py2.7.exe#md5=57e1e64f6b7c7f1d2eddfc9746bbaf20
+  64 bit users just download and run the following file in Python: 
+  http://peak.telecommunity.com/dist/ez_setup.py
+  
+ pyevolve
+  You can't use the windows installer, because it incorrectly forces a python 2.6 requirement regardless of the fact that python 2.7.3 is source-compatible. Download the 0.6rc source from here: 
+  
+  http://sourceforge.net/projects/pyevolve/files/Pyevolve/0.6rc1/Pyevolve-0.6rc1.zip/download
+  
+  Install from the extracted source by typing: "C:\python27\python.exe" setup.py install
