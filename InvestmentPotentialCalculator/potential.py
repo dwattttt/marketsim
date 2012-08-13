@@ -59,7 +59,6 @@ def eval_func(chromosome):
     #with one allocation for as long as possible, it's on a complete tangent
     #with getting rich though, so it seems that it's one or the other...
     lastValue = -1
-    changePenalty = 0.1
     penaltyTotal = 0.0
     for value in chromosome:
         allocation = value / 1.0
@@ -67,7 +66,7 @@ def eval_func(chromosome):
             score = m.step(allocation)
 
         if lastValue != value:
-            penaltyTotal += 1.5
+            penaltyTotal += CHANGE_PENALTY
 
         lastValue = value
 
@@ -75,6 +74,10 @@ def eval_func(chromosome):
 
 DATA_TEMPLATE = readDataFile('data.dat')
 STEP_SIZE = 5
+CHANGE_PENALTY = 1.5 # 1.5 encourages some balance between ease and wealth
+                     # moving it lower causes a dramatic shift toward wealth.
+                     # Higher, and you'll have nice long sequences of allocations
+                     # and absolutely no money.
 
 if __name__ == '__main__':
     m = Market(DATA_TEMPLATE)
@@ -85,7 +88,7 @@ if __name__ == '__main__':
     
     ga = GSimpleGA.GSimpleGA(genome)
     ga.setGenerations(10000)
-    ga.setPopulationSize(2 * m.steps / STEP_SIZE)
+    ga.setPopulationSize(m.steps / STEP_SIZE)
     ga.terminationCriteria.set(GSimpleGA.ConvergenceCriteria)
     ga.setMutationRate(0.04)
     
