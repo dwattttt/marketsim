@@ -1,8 +1,15 @@
+#ifndef QPICTURELABEL_H
+#define QPICTURELABEL_H
+
 // Source: http://stackoverflow.com/questions/5653114/display-image-in-qt-to-fit-label-size
 
 #include <QImage>
 #include <QPixmap>
 #include <QLabel>
+
+namespace Ui {
+class QPictureLabel;
+}
 
 class QPictureLabel : public QLabel
 {
@@ -17,3 +24,5 @@ public:
     void setPixmap(QPixmap aPicture);
     void paintEvent(QPaintEvent *aEvent);
 };
+
+#endif

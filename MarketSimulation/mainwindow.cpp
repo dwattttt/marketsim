@@ -180,12 +180,6 @@ void MainWindow::preNavigation()
         ui->prevButton->setEnabled(false);
     }
 
-    //Fifth last screen is initial allocation
-    //Can't go back from this screen
-    if (pos + 5 == widgets->end()) {
-        ui->prevButton->setEnabled(false);
-    }
-
     // If we hit the first test, can't proceed until passed
     if (pos - 3 == widgets->begin() && test1Passed == false) {
 #ifdef QT_NO_DEBUG
@@ -207,6 +201,8 @@ void MainWindow::preNavigation()
 #endif
     }
 
+    //Fifth last screen is initial allocation
+    //Can't go back from this screen after submitting an allocation
     if (*pos == initAlloc)
     {
         ui->nextButton->setEnabled(false);
@@ -305,6 +301,7 @@ void MainWindow::waitForInitialAlocation(double newAllocation)
 {
     if (*pos == initAlloc)
     {
+        ui->prevButton->setEnabled(false);
         ui->nextButton->setEnabled(true);
     }
 }
