@@ -432,6 +432,16 @@ Allocation</string>
               </spacer>
              </item>
              <item>
+              <widget class="MarketIndexWidget" name="marketIndex" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
               <spacer name="horizontalSpacer_5">
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
@@ -499,6 +509,14 @@ Allocation</string>
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MarketIndexWidget</class>
+   <extends>QWidget</extends>
+   <header>marketindexwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

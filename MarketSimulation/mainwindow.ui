@@ -164,32 +164,12 @@
             </spacer>
            </item>
            <item>
-            <widget class="QLabel" name="wealthLabelDesc">
-             <property name="font">
-              <font>
-               <pointsize>12</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Market Index:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="lblMarketIndex">
+            <widget class="MarketIndexWidget" name="marketIndex" native="true">
              <property name="minimumSize">
               <size>
-               <width>20</width>
+               <width>100</width>
                <height>0</height>
               </size>
-             </property>
-             <property name="font">
-              <font>
-               <pointsize>12</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string/>
              </property>
             </widget>
            </item>
@@ -203,7 +183,7 @@
              </property>
              <property name="sizeHint" stdset="0">
               <size>
-               <width>40</width>
+               <width>20</width>
                <height>20</height>
               </size>
              </property>
@@ -320,6 +300,14 @@
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>MarketIndexWidget</class>
+   <extends>QWidget</extends>
+   <header>marketindexwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

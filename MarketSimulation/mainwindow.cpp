@@ -89,7 +89,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(quest1, SIGNAL(gimmeANextButton()), this, SLOT(enableNextButton()));
 
-    connect(market, SIGNAL(priceChange(double)), this, SLOT(displayWealthLabel()) );
+    connect(market, SIGNAL(priceChange(double)), this, SLOT(updateIndex()) );
 
     // Hide the labels (until the right time)
     ui->simulationDisplay->setHidden(true);
@@ -117,9 +117,9 @@ void MainWindow::keyPressEvent(QKeyEvent* event)
 #endif
 }
 
-void MainWindow::updateIndex(double index)
+void MainWindow::updateIndex()
 {
-    ui->lblMarketIndex->setText("$" + QString::number(index,'f',2));
+    ui->marketIndex->IndexChanged(market->getIndex(), market->getIndexChange());
 }
 
 void MainWindow::preNavigation()

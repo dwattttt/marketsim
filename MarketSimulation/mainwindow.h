@@ -40,7 +40,7 @@ public:
     ~MainWindow();
 
 public slots:
-    void updateIndex(double index);
+    void updateIndex();
     void enableNextButton();
 
 protected:

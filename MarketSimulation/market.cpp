@@ -6,6 +6,11 @@
 #include <QDateTime>
 #include <QTime>
 
+double calculateIndex(double base, double avgPrice)
+{
+    return 100 * (avgPrice / base);
+}
+
 Market::Market(QString storedPathFile, QObject *parent, int evolveTimeMS) :
     QObject(parent)
 {
@@ -29,6 +34,10 @@ Market::Market(QString storedPathFile, QObject *parent, int evolveTimeMS) :
 
     // Load the first prices
     loadNextPriceFromFile();
+
+    // Initialise index
+    startingAvgPrice = (price1 + price2) / 2.0;
+    lastAvgPrice = startingAvgPrice;
 
     // Set up the log files
     QString logFileName = "Experiment" + QDateTime::currentDateTime().toString(" - MM-dd hh.mm.txt");
@@ -97,6 +106,16 @@ double Market::getAllocation()
     return allocation;
 }
 
+double Market::getIndex()
+{
+    return calculateIndex(startingAvgPrice, (price1 + price2) / 2.0);
+}
+
+double Market::getIndexChange()
+{
+    double currentAvgPrice = (price1 + price2) / 2.0;
+    return 100 * ((currentAvgPrice - lastAvgPrice) / lastAvgPrice);
+}
 
 void Market::updatePrice()
 {
@@ -106,6 +125,8 @@ void Market::updatePrice()
         evolveTimer->stop();
         timeTimer->stop();
     }
+
+    lastAvgPrice = (price1 + price2) / 2.0;
     if (usingStoredPath)
     {
         // Load next prices from the stored data
@@ -119,6 +140,8 @@ void Market::updatePrice()
 
     // Calculate new total wealth
     wealth = shares1*price1 + shares2*price2;
+
+    // Calculate new index
 
     recordData(false);
     emit priceChange(round(experimentTime->elapsed()/1000.0));

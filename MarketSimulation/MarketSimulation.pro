@@ -34,7 +34,8 @@ SOURCES += main.cpp\
     plotwidget.cpp \
     circularbuffer.cpp \
     QPictureLabel.cpp \
-    investmentslider.cpp
+    investmentslider.cpp \
+    marketindexwidget.cpp
 
 HEADERS  += mainwindow.h \
     market.h \
@@ -60,7 +61,8 @@ HEADERS  += mainwindow.h \
     plotwidget.h \
     circularbuffer.h \
     QPictureLabel.hpp \
-    investmentslider.h
+    investmentslider.h \
+    marketindexwidget.h
 
 FORMS    += mainwindow.ui \
     simulationwindow.ui \
@@ -80,7 +82,8 @@ FORMS    += mainwindow.ui \
     quest1.ui \
     finalscreen.ui \
     plotwidget.ui \
-    investmentslider.ui
+    investmentslider.ui \
+    marketindexwidget.ui
 
 RESOURCES += \
     resources.qrc

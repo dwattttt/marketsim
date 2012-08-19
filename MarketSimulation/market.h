@@ -18,6 +18,8 @@ public:
     double      getPrice2();
     double      getWealth();
     double      getAllocation();
+    double      getIndex();
+    double      getIndexChange();
 
     void        updateAllocation(double newAllocation);
 
@@ -48,6 +50,9 @@ private:
     double      shares1;
     double      shares2;
     double      wealth;
+
+    double      startingAvgPrice;
+    double      lastAvgPrice;
 
     QTimer*     timeTimer;
     QTimer*     evolveTimer;

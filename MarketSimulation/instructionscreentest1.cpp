@@ -13,10 +13,10 @@ InstructionScreenTest1::InstructionScreenTest1(QWidget *parent) :
     plot->addData(0, price1, price2);
     ui->plotWidget->layout()->addWidget(plot);
 
+    ui->investment->toggleDummyBar(true);
     ui->investment->updateAllocation(0.5);
     ui->investment->updatePrices(price1, price2);
     ui->investment->updateWealth(wealth);
-    ui->investment->toggleDummyBar(true);
     connect(ui->investment, SIGNAL(allocationUpdated(double)), this, SLOT(updateAllocation(double)));
 }
 

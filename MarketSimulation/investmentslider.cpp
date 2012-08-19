@@ -37,6 +37,13 @@ void investmentSlider::updatePrices(double price1, double price2)
 {
     ui->price1Label->setText("$" + QString::number(price1,'f',2));
     ui->price2Label->setText("$" + QString::number(price2,'f',2));
+
+    // dummy bar display
+    double avgPrice = (price1 + price2) / 2;
+    double base = 5.0;
+    double index = 100 * (avgPrice / base);
+    double indexChange = 100 * ((avgPrice - base) / base);
+    ui->marketIndex->IndexChanged(index, indexChange);
 }
 
 void investmentSlider::updateWealth(double newWealth)
