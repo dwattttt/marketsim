@@ -42,8 +42,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->stackedWidget->addWidget(instTest2);
     ui->stackedWidget->addWidget(instTest3);
     ui->stackedWidget->addWidget(initAlloc);
-    ui->stackedWidget->addWidget(sim);
     ui->stackedWidget->addWidget(dec);
+    ui->stackedWidget->addWidget(sim);
     ui->stackedWidget->addWidget(quest1);
     ui->stackedWidget->addWidget(fin);
 
@@ -63,8 +63,8 @@ MainWindow::MainWindow(QWidget *parent) :
     widgets->push_back(instTest3); //11
     widgets->push_back(inst8); //12
     widgets->push_back(initAlloc);
-    widgets->push_back(sim);
     widgets->push_back(dec);
+    widgets->push_back(sim);
     widgets->push_back(quest1);
     widgets->push_back(fin);
 
@@ -85,7 +85,6 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(instTest2,SIGNAL(testPassed()),this,SLOT(passTest2()));
     connect(instTest3->win, SIGNAL(DecryptionCompleted()), this, SLOT(passTest3()));
     connect(market, SIGNAL(newTime(QString)), this, SLOT(updateTime(QString)));
-    connect(sim,SIGNAL(updateWealth(double)),this,SLOT(updateWealth(double)));
     connect(market, SIGNAL(allocationUpdated(double)), this, SLOT(waitForInitialAlocation(double)));
 
     connect(quest1, SIGNAL(gimmeANextButton()), this, SLOT(enableNextButton()));
@@ -93,10 +92,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(market, SIGNAL(priceChange(double)), this, SLOT(displayWealthLabel()) );
 
     // Hide the labels (until the right time)
-    ui->wealthLabel->setHidden(true);
-    ui->wealthLabelDesc->setHidden(true);
-    ui->timeLabel->setHidden(true);
-    ui->timeLabelDesc->setHidden(true);
+    ui->simulationDisplay->setHidden(true);
 
     this->setWindowFlags(Qt::FramelessWindowHint);
     this->showFullScreen();
@@ -121,19 +117,15 @@ void MainWindow::keyPressEvent(QKeyEvent* event)
 #endif
 }
 
-void MainWindow::updateWealth(double wealth)
+void MainWindow::updateIndex(double index)
 {
-    ui->wealthLabel->setText("$" + QString::number(wealth,'f',2));
+    ui->lblMarketIndex->setText("$" + QString::number(index,'f',2));
 }
 
 void MainWindow::preNavigation()
 {
     ui->prevButton->setEnabled(true);
     ui->nextButton->setEnabled(true);
-    ui->timeLabel->setVisible(true);
-    ui->timeLabelDesc->setVisible(true);
-    ui->wealthLabel->setVisible(true);
-    ui->wealthLabelDesc->setVisible(true);
     ui->prevButton->setHidden(false);
     ui->nextButton->setHidden(false);
 
@@ -172,7 +164,6 @@ void MainWindow::preNavigation()
         if (!simStarted){
             market->startMarket();
             sim->initAllocation();
-            displayWealthLabel();
             simRunning = true;
             simStarted = true;
         }
@@ -213,13 +204,7 @@ void MainWindow::preNavigation()
         fin->Populate(market->getWealth(), dec->GetScore());
     }
 
-    //If the sim isn't running, hide the timer/wealth labels
-    if (!simRunning) {
-        ui->timeLabel->setVisible(false);
-        ui->timeLabelDesc->setVisible(false);
-        ui->wealthLabel->setVisible(false);
-        ui->wealthLabelDesc->setVisible(false);
-    }
+    ui->simulationDisplay->setVisible(simRunning);
 
 }
 
@@ -304,9 +289,4 @@ void MainWindow::waitForInitialAlocation(double newAllocation)
         ui->prevButton->setEnabled(false);
         ui->nextButton->setEnabled(true);
     }
-}
-
-void MainWindow::displayWealthLabel()
-{
-    ui->wealthLabel->setText(QString("$") + QString::number(market->getWealth(), 'f', 2));
 }

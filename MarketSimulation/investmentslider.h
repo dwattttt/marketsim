@@ -14,7 +14,7 @@ class investmentSlider : public QWidget
 public:
     explicit investmentSlider(QWidget *parent = 0);
     void setAllocation(double newAllocation);
-
+    void toggleDummyBar(bool toggle);
     ~investmentSlider();
 private:
     Ui::investmentSlider *ui;

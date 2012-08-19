@@ -22,6 +22,7 @@ SimulationWindow::~SimulationWindow()
 void SimulationWindow::initAllocation()
 {
     ui->investment->updateAllocation(market->getAllocation());
+    ui->investment->updateWealth(market->getWealth());
     updatePrices(0);
 }
 
@@ -31,6 +32,7 @@ void SimulationWindow::updatePrices(double time)
     double price2 = market->getPrice2();
 
     ui->investment->updatePrices(price1, price2);
+    ui->investment->updateWealth(market->getWealth());
     ui->plotWidget->addData(time, price1, price2);
 }
 

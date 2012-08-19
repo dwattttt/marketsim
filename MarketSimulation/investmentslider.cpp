@@ -41,8 +41,12 @@ void investmentSlider::updatePrices(double price1, double price2)
 
 void investmentSlider::updateWealth(double newWealth)
 {
-    ui->dummyBar->setVisible(true);
     ui->wealthLabel->setText("$" + QString::number(newWealth,'f',2));
+}
+
+void investmentSlider::toggleDummyBar(bool toggle)
+{
+    ui->dummyBar->setVisible(toggle);
 }
 
 void investmentSlider::allocationChanged()

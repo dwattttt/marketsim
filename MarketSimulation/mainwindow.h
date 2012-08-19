@@ -40,7 +40,7 @@ public:
     ~MainWindow();
 
 public slots:
-    void updateWealth(double wealth);
+    void updateIndex(double index);
     void enableNextButton();
 
 protected:
@@ -90,7 +90,6 @@ private slots:
     void passTest2();
     void passTest3();
     void waitForInitialAlocation(double newAllocation);
-    void displayWealthLabel();
 };
 
 #endif // MAINWINDOW_H

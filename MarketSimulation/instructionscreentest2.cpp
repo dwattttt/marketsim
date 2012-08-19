@@ -16,6 +16,7 @@ InstructionScreenTest2::InstructionScreenTest2(QWidget *parent) :
     ui->investment->updateAllocation(0.75);
     ui->investment->updatePrices(price1, price2);
     ui->investment->updateWealth(wealth);
+    ui->investment->toggleDummyBar(true);
     connect(ui->investment, SIGNAL(allocationUpdated(double)), this, SLOT(updateAllocation(double)));
 }
 

@@ -16,6 +16,9 @@ InitialAllocationScreen::InitialAllocationScreen(Market* market, QWidget *parent
     ui->plotWidget->layout()->addWidget(plot);
 
     updatePrices(0);
+
+    // setup investment slider
+    ui->investment->updateWealth(market->getWealth());
     connect(ui->investment, SIGNAL(allocationUpdated(double)), this, SLOT(updateAllocation(double)));
 }
 
