@@ -24,7 +24,11 @@ void QPictureLabel::_displayImage()
     float cw = width(), ch = height();
     float pw = _qpCurrent.width(), ph = _qpCurrent.height();
 
-    if ((pw > cw && ph > ch && pw/cw) > ph/ch || //both width and high are bigger, ratio at high is bigger or
+    if (_qpSource.width() < cw && _qpSource.height() < ch)
+    {
+        _qpCurrent = _qpSource;
+    }
+    else if ((pw > cw && ph > ch && pw/cw) > ph/ch || //both width and high are bigger, ratio at high is bigger or
         (pw > cw && ph <= ch) || //only the width is bigger or
         (pw < cw && ph < ch && cw/pw < ch/ph) //both width and height is smaller, ratio at width is smaller
         )
