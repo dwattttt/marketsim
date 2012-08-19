@@ -11,7 +11,7 @@ class Market : public QObject
     Q_OBJECT
 public:
     explicit    Market(QString storedPathFile, QObject *parent = 0,
-                       int evolveTimeMS = 2000);
+                       int evolveTimeMS = 5000);
     virtual     ~Market();
 
     double      getPrice1();
@@ -25,7 +25,7 @@ public:
 
     void        startMarket();
 
-    const static int EXPERIMENT_RUNNING_TIME = 60*20; // seconds to run simulation
+    const static int EXPERIMENT_RUNNING_TIME = 60*30; // seconds to run simulation
     QTime*      experimentTime;
 signals:
     void        priceChange(double time);

@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     // Create our market
-    market = new Market(":/market-data",this,2000);
+    market = new Market(":/market-data",this,5000);
 
     // Create the windows
     sim = new SimulationWindow(market, 0);
