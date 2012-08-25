@@ -124,6 +124,8 @@ void MainWindow::updateIndex()
 
 void MainWindow::preNavigation()
 {
+    ui->prevButton->setText("Previous");
+    ui->nextButton->setText("Next");
     ui->prevButton->setEnabled(true);
     ui->nextButton->setEnabled(true);
     ui->prevButton->setHidden(false);
@@ -147,17 +149,17 @@ void MainWindow::preNavigation()
         ui->nextButton->setEnabled(false);
     }
 
-    //Third last screen is decryption
-    //If simulation is running, can't go forward
+    //Third last screen is simulation
     if (pos + 3 == widgets->end()) {
         if (simRunning) {
             ui->nextButton->setEnabled(false);
         }
         market->recordData(true, true);
+        ui->prevButton->setText("Go To Decryption Task");
     }
 
-    //Fourth last screen is simulation
-    //Can never go back from simulation
+    //Fourth last screen is decryption
+    //Can never go back from decryption
     if (pos + 4 == widgets->end()) {
 
         //If time hasn't run out, the simulation starts now
@@ -168,6 +170,7 @@ void MainWindow::preNavigation()
             simStarted = true;
         }
         market->recordData(true, false);
+        ui->nextButton->setText("Go To Simulation Task");
         ui->prevButton->setEnabled(false);
     }
 
