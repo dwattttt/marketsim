@@ -225,9 +225,7 @@ void Market::recordData(bool async, bool simWindow)
         data.clear();
         if (simWindow)
         {
-            data.append(QString::number(expTime) + ",Simulation\n");
-        } else {
-            data.append(QString::number(expTime) + ",Decryption\n");
+            data.append(QString::number(expTime) + "\n");
         }
         swapLogFile->write(data);
         swapLogFile->flush();
