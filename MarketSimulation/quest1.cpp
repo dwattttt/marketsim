@@ -32,6 +32,7 @@ void QuestionScreen1::on_submitButton_clicked()
     if ( !(ui->EQ->isChecked() || ui->GT->isChecked() || ui->LT->isChecked()) ) return chuckSkitz();
     if (ui->A4->text().length() < 1) return chuckSkitz();
     if ( !(ui->True->isChecked() || ui->False->isChecked()) ) return chuckSkitz();
+    if ( !(ui->maleRadio->isChecked() || ui->femaleRadio->isChecked())) return chuckSkitz();
 
     // hide error message once checks have passed
     ui->errorMsg->setHidden(true);
@@ -53,6 +54,8 @@ void QuestionScreen1::on_submitButton_clicked()
     out << ui->A4->text().toLatin1() << endl;
     if   ( ui->True->isChecked() )  out << QString("True\n").toLatin1();
     if   ( ui->False->isChecked() ) out << QString("False\n").toLatin1();
+    if   ( ui->maleRadio->isChecked() )  out << QString("Male\n").toLatin1();
+    if   ( ui->femaleRadio->isChecked() ) out << QString("Female\n").toLatin1();
 
     file->close();
 
