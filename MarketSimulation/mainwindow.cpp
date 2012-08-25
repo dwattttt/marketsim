@@ -156,6 +156,7 @@ void MainWindow::preNavigation()
         }
         market->recordData(true, true);
         ui->prevButton->setText("Go To Decryption Task");
+        ui->nextButton->setText("");
     }
 
     //Fourth last screen is decryption
@@ -171,6 +172,7 @@ void MainWindow::preNavigation()
         }
         market->recordData(true, false);
         ui->nextButton->setText("Go To Simulation Task");
+        ui->prevButton->setText("");
         ui->prevButton->setEnabled(false);
     }
 

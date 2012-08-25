@@ -43,14 +43,37 @@
        <number>0</number>
       </property>
       <item>
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>0</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
        <widget class="QGroupBox" name="groupBox">
         <property name="sizePolicy">
+<<<<<<< HEAD
          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+=======
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+>>>>>>> Updated buttons and resulting screenshot of market
           <horstretch>0</horstretch>
           <verstretch>200</verstretch>
          </sizepolicy>
         </property>
         <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>300</height>
+         </size>
+        </property>
+        <property name="maximumSize">
          <size>
           <width>800</width>
           <height>400</height>
