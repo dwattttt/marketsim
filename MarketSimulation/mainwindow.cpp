@@ -153,7 +153,7 @@ void MainWindow::preNavigation()
         if (simRunning) {
             ui->nextButton->setEnabled(false);
         }
-        market->recordData(true, false);
+        market->recordData(true, true);
     }
 
     //Fourth last screen is simulation
@@ -167,7 +167,7 @@ void MainWindow::preNavigation()
             simRunning = true;
             simStarted = true;
         }
-        market->recordData(true, true);
+        market->recordData(true, false);
         ui->prevButton->setEnabled(false);
     }
 
