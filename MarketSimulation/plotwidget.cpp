@@ -34,6 +34,7 @@ PlotWidget::PlotWidget(QWidget *parent) :
     setAxisTitle(QwtPlot::yLeft, " Price [$]");
     setAxisScaleDraw(QwtPlot::yLeft,
                      new QwtScaleDraw());
+    setAxisScale(QwtPlot::yLeft, 0, MAX_PRICE_PLOT);
     setAxisLabelRotation(QwtPlot::yLeft, -50.0);
     setAxisLabelAlignment(QwtPlot::yLeft, Qt::AlignLeft | Qt::AlignBottom);
 
