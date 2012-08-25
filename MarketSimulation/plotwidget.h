@@ -31,6 +31,7 @@ private:
 
     QwtPlotCurve* asset1Curve;
     QwtPlotCurve* asset2Curve;
+    const static double MAX_PRICE_PLOT = 10.0;
 };
 
 #endif // PLOTWIDGET_H
