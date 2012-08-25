@@ -15,7 +15,7 @@ public:
     explicit FinalScreen(QWidget *parent = 0);
     ~FinalScreen();
     void Populate(double investmentValue, int decryptionsCompleted);
-    static const double DECRYPTION_VALUE = 0.15;
+    static const double DECRYPTION_VALUE = 0.10;
 private:
     Ui::finalscreen *ui;
 };
