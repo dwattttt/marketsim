@@ -155,7 +155,7 @@ void MainWindow::preNavigation()
             ui->nextButton->setEnabled(false);
         }
         market->recordData(true, true);
-        ui->prevButton->setText("Go To Decryption Task");
+        ui->prevButton->setText("Go to Decryption Task");
         ui->nextButton->setText("");
     }
 
@@ -171,7 +171,7 @@ void MainWindow::preNavigation()
             simStarted = true;
         }
         market->recordData(true, false);
-        ui->nextButton->setText("Go To Simulation Task");
+        ui->nextButton->setText("Go to Simulation Task");
         ui->prevButton->setText("");
         ui->prevButton->setEnabled(false);
     }
