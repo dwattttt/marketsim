@@ -7,11 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1332</width>
-<<<<<<< HEAD
-    <height>870</height>
-=======
     <height>549</height>
->>>>>>> Updated buttons and resulting screenshot of market
    </rect>
   </property>
   <property name="windowTitle">
@@ -113,11 +109,7 @@
       </widget>
      </item>
      <item>
-<<<<<<< HEAD
       <spacer name="verticalSpacer">
-=======
-      <spacer name="verticalSpacer_2">
->>>>>>> Updated buttons and resulting screenshot of market
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>

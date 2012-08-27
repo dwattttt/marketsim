@@ -52,11 +52,7 @@
       <item>
        <widget class="QGroupBox" name="groupBox">
         <property name="sizePolicy">
-<<<<<<< HEAD
-         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-=======
          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
->>>>>>> Updated buttons and resulting screenshot of market
           <horstretch>0</horstretch>
           <verstretch>200</verstretch>
          </sizepolicy>
