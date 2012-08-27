@@ -60,6 +60,7 @@ private:
 
     QFile*      logFile;
     QFile*      swapLogFile;
+    QFile*      simLogFile;
 
     std::pair<double, double> dWienerSample();
     std::pair<double, double> stdNormalSample();

@@ -44,8 +44,11 @@ Market::Market(QString storedPathFile, QObject *parent, int evolveTimeMS) :
     logFile = new QFile(logFileName);
     ok = logFile->open(QIODevice::WriteOnly | QIODevice::Text);
     QString swapLogFileName = "Experiment Swaps" + QDateTime::currentDateTime().toString(" - MM-dd hh.mm.txt");
+    QString simLogFileName = "Sim Swaps" + QDateTime::currentDateTime().toString(" - MM-dd hh.mm.txt");
     swapLogFile = new QFile(swapLogFileName);
+    simLogFile = new QFile(simLogFileName);
     ok = ok && swapLogFile->open(QIODevice::WriteOnly | QIODevice::Text);
+    ok = ok && simLogFile->open(QIODevice::WriteOnly | QIODevice::Text);
 
     if (!ok)
     {
@@ -227,6 +230,19 @@ void Market::recordData(bool async, bool simWindow)
         {
             data.append(QString::number(expTime) + "\n");
         }
+        simLogFile->write(data);
+        simLogFile->flush();
+
+        data.clear();
+        if (simWindow)
+        {
+            data.append(QString::number(expTime) + ",Simulation\n");
+        }
+        else
+        {
+            data.append(QString::number(expTime) + ",Decryption\n");
+        }
+
         swapLogFile->write(data);
         swapLogFile->flush();
     }
